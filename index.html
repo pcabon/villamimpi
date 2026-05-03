@@ -369,16 +369,16 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#story" onclick="closeMobile()"><span data-lang="fr">La villa</span><span data-lang="en">The Villa</span><span data-lang="zh">关于别墅</span></a>
-  <a href="#rooms" onclick="closeMobile()"><span data-lang="fr">Chambres</span><span data-lang="en">Rooms</span><span data-lang="zh">客房</span></a>
-  <a href="#experience" onclick="closeMobile()"><span data-lang="fr">Expériences</span><span data-lang="en">Experiences</span><span data-lang="zh">体验</span></a>
-  <a href="#bali" onclick="closeMobile()">Bali</a>
-  <a href="/blog/" onclick="closeMobile()">Blog</a>
-  <a href="#booking" onclick="closeMobile()" class="mobile-book"><span data-lang="fr">Réserver</span><span data-lang="en">Book Now</span><span data-lang="zh">立即预订</span></a>
+  <a href="#story" id="ml-story">La villa</a>
+  <a href="#rooms" id="ml-rooms">Chambres</a>
+  <a href="#experience" id="ml-exp">Expériences</a>
+  <a href="#bali">Bali</a>
+  <a href="/blog/">Blog</a>
+  <a href="#booking" class="mobile-book" id="ml-book">Réserver</a>
   <div class="mobile-lang">
-    <button class="mobile-lang-btn active" onclick="setLang('fr'); updateMobileLang(this)">FR</button>
-    <button class="mobile-lang-btn" onclick="setLang('en'); updateMobileLang(this)">EN</button>
-    <button class="mobile-lang-btn" onclick="setLang('zh'); updateMobileLang(this)">中文</button>
+    <button class="mobile-lang-btn active" onclick="setLangMobile('fr')">FR</button>
+    <button class="mobile-lang-btn" onclick="setLangMobile('en')">EN</button>
+    <button class="mobile-lang-btn" onclick="setLangMobile('zh')">中文</button>
   </div>
 </div>
 
@@ -781,20 +781,51 @@
   function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     const btn = document.getElementById('hamburger');
-    menu.classList.toggle('open');
+    const isOpen = menu.classList.toggle('open');
     btn.classList.toggle('open');
-    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   }
-  function closeMobile() {
+
+  function closeMobileMenu() {
     const menu = document.getElementById('mobileMenu');
     const btn = document.getElementById('hamburger');
     menu.classList.remove('open');
     btn.classList.remove('open');
     document.body.style.overflow = '';
   }
-  function updateMobileLang(btn) {
-    document.querySelectorAll('.mobile-lang-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+
+  // Close menu when clicking a link
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.mobile-menu a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        closeMobileMenu();
+      });
+    });
+  });
+
+  function setLangMobile(lang) {
+    setLang(lang);
+    // Update mobile lang buttons
+    document.querySelectorAll('.mobile-lang-btn').forEach(function(b) {
+      b.classList.remove('active');
+      if ((lang === 'fr' && b.textContent === 'FR') ||
+          (lang === 'en' && b.textContent === 'EN') ||
+          (lang === 'zh' && b.textContent === '中文')) {
+        b.classList.add('active');
+      }
+    });
+    // Update mobile menu labels
+    const labels = {
+      fr: { story: 'La villa', rooms: 'Chambres', exp: 'Expériences', book: 'Réserver' },
+      en: { story: 'The Villa', rooms: 'Rooms', exp: 'Experiences', book: 'Book Now' },
+      zh: { story: '关于别墅', rooms: '客房', exp: '体验', book: '立即预订' }
+    };
+    if (labels[lang]) {
+      document.getElementById('ml-story').textContent = labels[lang].story;
+      document.getElementById('ml-rooms').textContent = labels[lang].rooms;
+      document.getElementById('ml-exp').textContent = labels[lang].exp;
+      document.getElementById('ml-book').textContent = labels[lang].book;
+    }
   }
 </script>
 
