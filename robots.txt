@@ -1,0 +1,8 @@
+# Villa Mimpi Ubud — robots.txt
+# https://www.villamimpiubud.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.villamimpiubud.com/sitemap.xml
