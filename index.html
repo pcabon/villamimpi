@@ -157,6 +157,23 @@
   .lang-btn.active { background: var(--gold); color: var(--white); }
   .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--white); }
 
+
+  /* HAMBURGER */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 0.3rem; background: none; border: none; z-index: 200; }
+  .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: all 0.3s ease; transform-origin: center; }
+  .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(28,58,42,0.98); backdrop-filter: blur(12px); z-index: 150; flex-direction: column; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+  .mobile-menu.open { opacity: 1; }
+  .mobile-menu a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 1.5rem; font-family: var(--font-serif); font-weight: 300; letter-spacing: 0.05em; padding: 1rem 2rem; transition: color 0.3s ease; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.08); width: 100%; display: block; }
+  .mobile-menu a:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+  .mobile-menu a:hover { color: var(--gold-light); }
+  .mobile-menu a.mobile-book { color: var(--gold-light); }
+  .mobile-lang { display: flex; gap: 0; margin-top: 2rem; border: 1px solid rgba(255,255,255,0.2); overflow: hidden; }
+  .mobile-lang-btn { background: none; border: none; color: rgba(255,255,255,0.5); cursor: pointer; font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.6rem 1rem; transition: all 0.3s ease; border-right: 1px solid rgba(255,255,255,0.2); }
+  .mobile-lang-btn:last-child { border-right: none; }
+  .mobile-lang-btn.active { background: var(--gold); color: var(--white); }
   /* HERO */
   #hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
   .hero-bg { position: absolute; inset: 0; background-image: url('https://5fdcbf76bb.clvaw-cdnwnd.com/79d8e794adaa1f829b9472d6a79f277e/200000036-a477aa477d/DJI_0947.JPG?ph=5fdcbf76bb'); background-size: cover; background-position: center 60%; transform: scale(1.05); animation: heroZoom 20s ease-in-out infinite alternate; }
@@ -307,6 +324,10 @@
     nav { padding: 1.2rem 1.5rem; }
     nav.scrolled { padding: 0.8rem 1.5rem; }
     .nav-links { display: none; }
+    .nav-right { gap: 0.8rem; }
+    .lang-switcher { display: none; }
+    .hamburger { display: flex; }
+    .mobile-menu { display: flex; }
     .story-inner, .rooms-grid, .experience-inner, .kitchen-inner, .footer-inner, .rooms-header { padding: 0 1.5rem; }
     .rooms-grid { grid-template-columns: 1fr; }
     .room-card-large { grid-column: 1; }
@@ -335,6 +356,9 @@
       <li><a href="/blog/"><span data-lang="fr">Blog</span><span data-lang="en">Blog</span><span data-lang="zh">博客</span></a></li>
       <li><a href="#booking" class="nav-book"><span data-lang="fr">Réserver</span><span data-lang="en">Book Now</span><span data-lang="zh">立即预订</span></a></li>
     </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
     <div class="lang-switcher">
       <button class="lang-btn active" onclick="setLang('fr')">FR</button>
       <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -342,6 +366,21 @@
     </div>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#story" onclick="closeMobile()"><span data-lang="fr">La villa</span><span data-lang="en">The Villa</span><span data-lang="zh">关于别墅</span></a>
+  <a href="#rooms" onclick="closeMobile()"><span data-lang="fr">Chambres</span><span data-lang="en">Rooms</span><span data-lang="zh">客房</span></a>
+  <a href="#experience" onclick="closeMobile()"><span data-lang="fr">Expériences</span><span data-lang="en">Experiences</span><span data-lang="zh">体验</span></a>
+  <a href="#bali" onclick="closeMobile()">Bali</a>
+  <a href="/blog/" onclick="closeMobile()">Blog</a>
+  <a href="#booking" onclick="closeMobile()" class="mobile-book"><span data-lang="fr">Réserver</span><span data-lang="en">Book Now</span><span data-lang="zh">立即预订</span></a>
+  <div class="mobile-lang">
+    <button class="mobile-lang-btn active" onclick="setLang('fr'); updateMobileLang(this)">FR</button>
+    <button class="mobile-lang-btn" onclick="setLang('en'); updateMobileLang(this)">EN</button>
+    <button class="mobile-lang-btn" onclick="setLang('zh'); updateMobileLang(this)">中文</button>
+  </div>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -737,6 +776,26 @@
   if (userLang.startsWith('zh')) setLang('zh');
   else if (userLang.startsWith('en')) setLang('en');
   // else stay FR by default
+
+  // Hamburger menu
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMobile() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function updateMobileLang(btn) {
+    document.querySelectorAll('.mobile-lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
 </script>
 
 <!-- Netlify Identity Widget -->
