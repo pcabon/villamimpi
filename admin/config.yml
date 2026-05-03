@@ -1,0 +1,41 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/blog"
+public_folder: "/images/blog"
+
+locale: fr
+
+collections:
+  - name: "blog"
+    label: "Articles de blog"
+    folder: "blog/_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date de publication", name: "date", widget: "datetime" }
+      - label: "Langue"
+        name: "lang"
+        widget: "select"
+        options:
+          - { label: "Français", value: "fr" }
+          - { label: "English", value: "en" }
+          - { label: "中文", value: "zh" }
+        default: "fr"
+      - label: "Catégorie"
+        name: "category"
+        widget: "select"
+        options:
+          - "Bali & Ubud"
+          - "Activités"
+          - "Gastronomie"
+          - "Culture & Spiritualité"
+          - "Nature"
+          - "La Villa"
+        default: "Bali & Ubud"
+      - { label: "Image à la une", name: "image", widget: "image", required: false }
+      - { label: "Meta description (SEO, 160 caractères max)", name: "description", widget: "text" }
+      - { label: "Mots-clés SEO (séparés par des virgules)", name: "keywords", widget: "string", required: false }
+      - { label: "Contenu de l'article", name: "body", widget: "markdown" }
