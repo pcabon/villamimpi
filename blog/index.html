@@ -3,185 +3,778 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — Villa Mimpi Ubud | Bali & Ubud, conseils voyage</title>
-<meta name="description" content="Conseils voyage, activités à Ubud, culture balinaise et inspirations pour votre séjour à Bali. Le blog de la Villa Mimpi Ubud.">
+<title>Blog — Villa Mimpi Ubud</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSR5WZVGC2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZSR5WZVGC2');
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
-    --green: #1c3a2a; --gold: #c4923a; --gold-light: #d9b06a;
-    --cream: #f8f3ea; --cream-dark: #ede5d4; --white: #fefcf8;
-    --text: #1a1a16; --text-mid: #4a4a3a;
+    --green: #1c3a2a;
+    --green-mid: #2a5240;
+    --green-light: #3d7a5e;
+    --cream: #f8f3ea;
+    --cream-dark: #ede5d4;
+    --gold: #c4923a;
+    --gold-light: #d9b06a;
+    --white: #fefcf8;
+    --text-dark: #1a1a16;
+    --text-mid: #4a4a3a;
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Raleway', sans-serif;
+    --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
+
   html { scroll-behavior: smooth; }
-  body { font-family: var(--font-sans); background: var(--cream); color: var(--text); font-weight: 300; }
 
-  /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 3rem; display: flex; align-items: center; justify-content: space-between; background: rgba(28,58,42,0.96); backdrop-filter: blur(12px); box-shadow: 0 2px 30px rgba(0,0,0,0.2); }
-  .nav-logo { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 300; color: var(--white); text-decoration: none; }
-  .nav-logo span { color: var(--gold-light); font-style: italic; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
-  .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
-  .nav-book { background: var(--gold); color: var(--white) !important; padding: 0.55rem 1.3rem; }
-
-  /* HERO BLOG */
-  .blog-hero { padding: 8rem 3rem 4rem; background: var(--green); text-align: center; color: var(--white); position: relative; overflow: hidden; }
-  .blog-hero::before { content: ''; position: absolute; inset: 0; background-image: url('https://5fdcbf76bb.clvaw-cdnwnd.com/79d8e794adaa1f829b9472d6a79f277e/200000036-a477aa477d/DJI_0947.JPG?ph=5fdcbf76bb'); background-size: cover; background-position: center; opacity: 0.2; }
-  .blog-hero-inner { position: relative; }
-  .blog-hero-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-light); font-weight: 500; margin-bottom: 1rem; display: block; }
-  .blog-hero-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; line-height: 1.1; margin-bottom: 1rem; }
-  .blog-hero-title em { font-style: italic; color: var(--gold-light); }
-  .blog-hero-sub { font-size: 0.95rem; color: rgba(255,255,255,0.65); max-width: 500px; margin: 0 auto; line-height: 1.8; }
-
-  /* FILTRES */
-  .filters { max-width: 1100px; margin: 3rem auto 0; padding: 0 3rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }
-  .filter-btn { padding: 0.45rem 1.1rem; border: 1px solid var(--cream-dark); background: var(--white); color: var(--text-mid); font-family: var(--font-sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; cursor: pointer; transition: all 0.25s ease; }
-  .filter-btn:hover { border-color: var(--gold); color: var(--gold); }
-  .filter-btn.active { background: var(--green); color: var(--white); border-color: var(--green); }
-
-  /* GRILLE ARTICLES */
-  .blog-grid { max-width: 1100px; margin: 2.5rem auto; padding: 0 3rem 5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-
-  /* ARTICLE CARD */
-  .article-card { background: var(--white); border: 1px solid var(--cream-dark); transition: transform 0.35s ease, box-shadow 0.35s ease; display: flex; flex-direction: column; }
-  .article-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(28,58,42,0.1); }
-  .article-card-img { width: 100%; height: 200px; object-fit: cover; display: block; }
-  .article-card-img-placeholder { width: 100%; height: 200px; background: var(--green); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
-  .article-card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
-  .article-card-meta { display: flex; gap: 0.8rem; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; }
-  .article-card-cat { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
-  .article-card-date { font-size: 0.72rem; color: var(--text-mid); }
-  .article-card-lang { font-size: 0.65rem; background: var(--cream); padding: 0.15rem 0.5rem; color: var(--text-mid); }
-  .article-card-title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 300; color: var(--green); line-height: 1.25; margin-bottom: 0.8rem; }
-  .article-card-excerpt { font-size: 0.85rem; color: var(--text-mid); line-height: 1.75; flex: 1; }
-  .article-card-link { display: inline-block; margin-top: 1.2rem; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--gold-light); padding-bottom: 0.15rem; transition: color 0.25s; }
-  .article-card-link:hover { color: var(--green); border-color: var(--green); }
-
-  /* ARTICLE FEATURED */
-  .article-featured { grid-column: span 3; display: grid; grid-template-columns: 1fr 1fr; background: var(--white); border: 1px solid var(--cream-dark); transition: box-shadow 0.35s ease; }
-  .article-featured:hover { box-shadow: 0 20px 50px rgba(28,58,42,0.12); }
-  .article-featured-img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; display: block; }
-  .article-featured-img-placeholder { width: 100%; height: 100%; min-height: 320px; background: var(--green); display: flex; align-items: center; justify-content: center; font-size: 5rem; }
-  .article-featured-body { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
-  .article-featured-label { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.8rem; display: block; }
-  .article-featured-title { font-family: var(--font-serif); font-size: 2rem; font-weight: 300; color: var(--green); line-height: 1.15; margin-bottom: 1rem; }
-  .article-featured-excerpt { font-size: 0.9rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 1.5rem; }
-  .article-featured-link { display: inline-block; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); background: var(--green); padding: 0.7rem 1.8rem; text-decoration: none; transition: background 0.3s; }
-  .article-featured-link:hover { background: var(--gold); }
-
-  /* COMING SOON */
-  .coming-soon { grid-column: span 3; text-align: center; padding: 4rem 2rem; color: var(--text-mid); }
-  .coming-soon-icon { font-size: 2.5rem; margin-bottom: 1.2rem; }
-  .coming-soon h3 { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 300; color: var(--green); margin-bottom: 0.8rem; font-style: italic; }
-  .coming-soon p { font-size: 0.9rem; line-height: 1.8; max-width: 420px; margin: 0 auto; color: var(--text-mid); }
-
-  /* FOOTER */
-  footer { background: var(--text); padding: 2.5rem 3rem; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.35); font-size: 0.78rem; flex-wrap: wrap; gap: 1rem; }
-  footer a { color: var(--gold-light); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.1em; }
-
-  @media (max-width: 900px) {
-    .blog-grid { grid-template-columns: 1fr 1fr; }
-    .article-featured { grid-column: span 2; grid-template-columns: 1fr; }
-    .article-featured-img, .article-featured-img-placeholder { min-height: 220px; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--cream);
+    color: var(--text-dark);
+    min-height: 100vh;
   }
-  @media (max-width: 600px) {
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(28, 58, 42, 0.95);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-logo {
+    font-family: var(--font-serif);
+    font-size: 1.4rem; font-weight: 300; letter-spacing: 0.05em;
+    color: var(--cream); text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold-light); }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+  .nav-links a {
+    font-size: 0.72rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(248,243,234,0.8); text-decoration: none; transition: var(--transition);
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+  .nav-book {
+    border: 1px solid var(--gold) !important; color: var(--gold) !important;
+    padding: 0.45rem 1.2rem; letter-spacing: 0.15em !important;
+  }
+  .nav-book:hover { background: var(--gold) !important; color: var(--green) !important; }
+
+  /* ── LANG SWITCHER ── */
+  .lang-switcher {
+    display: flex; gap: 0.5rem; align-items: center;
+  }
+  .lang-btn {
+    font-family: var(--font-sans); font-size: 0.62rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 0.6rem;
+    border: 1px solid rgba(248,243,234,0.25); background: transparent;
+    color: rgba(248,243,234,0.6); cursor: pointer; transition: var(--transition);
+    border-radius: 2px;
+  }
+  .lang-btn.active, .lang-btn:hover {
+    border-color: var(--gold); color: var(--gold); background: rgba(196,146,58,0.1);
+  }
+
+  /* ── HAMBURGER ── */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--cream); transition: var(--transition); }
+  .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+
+  /* ── MOBILE MENU ── */
+  .mobile-menu {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 99;
+    background: var(--green); flex-direction: column; justify-content: center; align-items: center;
+    gap: 2rem; opacity: 0; transition: opacity 0.3s ease; pointer-events: none;
+  }
+  .mobile-menu.open { opacity: 1; pointer-events: all; }
+  .mobile-menu a {
+    font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--cream); text-decoration: none;
+  }
+  .mobile-menu .lang-switcher { margin-top: 1rem; }
+
+  /* ── HERO ── */
+  .blog-hero {
+    padding-top: 6rem; min-height: 38vh; display: flex; align-items: center;
+    background: var(--green);
+    position: relative; overflow: hidden;
+  }
+  .blog-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(196,146,58,0.12) 0%, transparent 60%);
+  }
+  .blog-hero-inner {
+    padding: 4rem 4rem 3rem; max-width: 700px; position: relative; z-index: 1;
+  }
+  .blog-hero-label {
+    font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; display: block; margin-bottom: 1.2rem;
+  }
+  .blog-hero-title {
+    font-family: var(--font-serif); font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 300; color: var(--cream); line-height: 1.05; margin-bottom: 1.2rem;
+  }
+  .blog-hero-title em { font-style: italic; color: var(--gold-light); }
+  .blog-hero-sub {
+    font-size: 0.9rem; color: rgba(248,243,234,0.7); line-height: 1.7; max-width: 520px;
+  }
+
+  /* ── FILTERS ── */
+  .filters {
+    padding: 2rem 4rem 1rem;
+    display: flex; gap: 0.6rem; flex-wrap: wrap;
+  }
+  .filter-btn {
+    font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.5rem 1.2rem; border: 1px solid var(--cream-dark);
+    background: var(--white); color: var(--text-mid); cursor: pointer;
+    transition: var(--transition); border-radius: 2px;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--green); color: var(--cream); border-color: var(--green);
+  }
+
+  /* ── GRID ── */
+  .blog-grid {
+    padding: 1.5rem 4rem 4rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: auto;
+    gap: 1.5rem;
+    max-width: 1400px;
+  }
+
+  /* ── FEATURED ARTICLE ── */
+  .article-featured {
+    grid-column: 1;
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex; flex-direction: column;
+  }
+  .article-featured:hover { box-shadow: 0 12px 40px rgba(28,58,42,0.12); transform: translateY(-2px); }
+
+  .article-featured-img-placeholder {
+    height: 280px; background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 5rem; color: rgba(248,243,234,0.3);
+  }
+  .article-featured-body { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+  .article-featured-label {
+    font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.8rem; font-weight: 500;
+  }
+  .article-featured-title {
+    font-family: var(--font-serif); font-size: 1.9rem; font-weight: 300;
+    color: var(--green); line-height: 1.15; margin-bottom: 1rem;
+  }
+  .article-featured-excerpt {
+    font-size: 0.9rem; color: var(--text-mid); line-height: 1.75;
+    flex: 1; margin-bottom: 1.5rem;
+  }
+  .article-read-more {
+    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--green); text-decoration: none; font-weight: 500;
+    border-bottom: 1px solid var(--gold); padding-bottom: 2px;
+    display: inline-block; transition: var(--transition);
+  }
+  .article-read-more:hover { color: var(--gold); }
+
+  /* ── SIDEBAR ── */
+  .blog-sidebar { grid-column: 2; display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .sidebar-card {
+    background: var(--white); border: 1px solid var(--cream-dark);
+    padding: 1.8rem; transition: var(--transition);
+  }
+  .sidebar-card:hover { box-shadow: 0 8px 24px rgba(28,58,42,0.08); }
+  .sidebar-label {
+    font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 1rem; display: block;
+  }
+  .sidebar-title {
+    font-family: var(--font-serif); font-size: 1.3rem; font-weight: 300;
+    color: var(--green); line-height: 1.2; margin-bottom: 0.7rem;
+  }
+  .sidebar-excerpt {
+    font-size: 0.82rem; color: var(--text-mid); line-height: 1.65; margin-bottom: 1rem;
+  }
+
+  /* ── CTA SIDEBAR ── */
+  .sidebar-cta {
+    background: var(--green); border: none; padding: 2rem;
+  }
+  .sidebar-cta .sidebar-label { color: var(--gold); }
+  .sidebar-cta .sidebar-title { color: var(--cream); font-size: 1.4rem; }
+  .sidebar-cta p { font-size: 0.85rem; color: rgba(248,243,234,0.75); line-height: 1.6; margin-bottom: 1.5rem; }
+  .cta-btn {
+    display: block; text-align: center; background: var(--gold);
+    color: var(--green); font-family: var(--font-sans); font-size: 0.7rem;
+    font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 0.9rem 1.5rem; text-decoration: none; transition: var(--transition);
+  }
+  .cta-btn:hover { background: var(--gold-light); }
+
+  /* ── EMPTY STATE ── */
+  .empty-state {
+    grid-column: 1 / -1; text-align: center; padding: 4rem 2rem;
+    color: var(--text-mid); display: none;
+  }
+  .empty-state.visible { display: block; }
+  .empty-state-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.4; }
+  .empty-state p { font-family: var(--font-serif); font-size: 1.3rem; color: var(--green); }
+
+  /* ── FULL ARTICLE VIEW ── */
+  .article-full {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: var(--white); overflow-y: auto;
+  }
+  .article-full.open { display: block; }
+  .article-full-inner { max-width: 740px; margin: 0 auto; padding: 7rem 2rem 4rem; }
+  .article-full-back {
+    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--green); cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;
+    margin-bottom: 2.5rem; border: none; background: none; font-family: var(--font-sans);
+    font-weight: 500; transition: var(--transition);
+  }
+  .article-full-back:hover { color: var(--gold); }
+  .article-full-label {
+    font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem; display: block;
+  }
+  .article-full-title {
+    font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300; color: var(--green); line-height: 1.1; margin-bottom: 1.5rem;
+  }
+  .article-full-meta {
+    font-size: 0.72rem; color: var(--text-mid); letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--cream-dark);
+  }
+  .article-full-content { font-size: 1rem; line-height: 1.9; color: var(--text-mid); }
+  .article-full-content h2 {
+    font-family: var(--font-serif); font-size: 1.6rem; font-weight: 300;
+    color: var(--green); margin: 2.5rem 0 1rem;
+  }
+  .article-full-content p { margin-bottom: 1.3rem; }
+  .article-full-content strong { color: var(--green-mid); }
+  .article-full-content hr { border: none; border-top: 1px solid var(--cream-dark); margin: 2rem 0; }
+  .article-seo-box {
+    margin-top: 3rem; padding: 1.5rem 2rem; background: var(--cream);
+    border-left: 3px solid var(--gold);
+  }
+  .article-seo-box h4 {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .article-seo-box p, .article-seo-box small { font-size: 0.85rem; color: var(--text-mid); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--green); color: rgba(248,243,234,0.6);
+    padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1.5rem;
+  }
+  footer .footer-logo { font-family: var(--font-serif); font-size: 1.2rem; color: var(--cream); }
+  footer .footer-logo span { color: var(--gold-light); }
+  footer nav a {
+    font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(248,243,234,0.5); text-decoration: none; margin-left: 2rem;
+    transition: var(--transition);
+  }
+  footer nav a:hover { color: var(--gold-light); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    .blog-hero { padding: 7rem 1.5rem 3rem; }
-    .blog-grid { grid-template-columns: 1fr; padding: 0 1.5rem 3rem; }
-    .article-featured { grid-column: 1; }
-    .filters { padding: 0 1.5rem; }
+    .hamburger { display: flex; }
+    .lang-switcher { display: none; }
+    .blog-hero-inner { padding: 3rem 1.5rem 2rem; }
+    .filters { padding: 1.5rem; }
+    .blog-grid { padding: 1rem 1.5rem 3rem; grid-template-columns: 1fr; }
+    .blog-sidebar { grid-column: 1; }
     footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+    footer nav a { margin-left: 0; margin-right: 1.5rem; }
   }
+
+  /* ── LANG VISIBILITY ── */
+  [data-lang] { display: none; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .article-featured, .sidebar-card { animation: fadeUp 0.5s ease both; }
 </style>
 </head>
 <body>
 
+<!-- ========== NAV ========== -->
 <nav>
   <a href="/" class="nav-logo">Villa <span>Mimpi</span> Ubud</a>
   <ul class="nav-links">
-    <li><a href="/#story">La villa</a></li>
-    <li><a href="/#rooms">Chambres</a></li>
-    <li><a href="/#experience">Expériences</a></li>
+    <li><a href="/#story">
+      <span data-lang="fr">La villa</span>
+      <span data-lang="en">The villa</span>
+      <span data-lang="zh">别墅</span>
+    </a></li>
+    <li><a href="/#rooms">
+      <span data-lang="fr">Chambres</span>
+      <span data-lang="en">Rooms</span>
+      <span data-lang="zh">客房</span>
+    </a></li>
+    <li><a href="/#experience">
+      <span data-lang="fr">Expériences</span>
+      <span data-lang="en">Experiences</span>
+      <span data-lang="zh">体验</span>
+    </a></li>
     <li><a href="/blog/" class="active">Blog</a></li>
-    <li><a href="/#booking" class="nav-book">Réserver</a></li>
+    <li><a href="/#booking" class="nav-book">
+      <span data-lang="fr">Réserver</span>
+      <span data-lang="en">Book Now</span>
+      <span data-lang="zh">立即预订</span>
+    </a></li>
   </ul>
+  <div class="lang-switcher">
+    <button class="lang-btn" data-lang-btn="fr" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" data-lang-btn="en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" data-lang-btn="zh" onclick="setLang('zh')">中文</button>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<div class="blog-hero">
-  <div class="blog-hero-inner">
-    <span class="blog-hero-label">Journal de la villa</span>
-    <h1 class="blog-hero-title">Inspirations <em>Balinaises</em></h1>
-    <p class="blog-hero-sub">Activités, culture, gastronomie et conseils voyage pour vivre Ubud et Bali comme jamais.</p>
+<!-- ========== MOBILE MENU ========== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#story" onclick="closeMobileMenu()">
+    <span data-lang="fr">La villa</span><span data-lang="en">The villa</span><span data-lang="zh">别墅</span>
+  </a>
+  <a href="/#rooms" onclick="closeMobileMenu()">
+    <span data-lang="fr">Chambres</span><span data-lang="en">Rooms</span><span data-lang="zh">客房</span>
+  </a>
+  <a href="/#experience" onclick="closeMobileMenu()">
+    <span data-lang="fr">Expériences</span><span data-lang="en">Experiences</span><span data-lang="zh">体验</span>
+  </a>
+  <a href="/blog/" onclick="closeMobileMenu()">Blog</a>
+  <a href="/#booking" onclick="closeMobileMenu()">
+    <span data-lang="fr">Réserver</span><span data-lang="en">Book Now</span><span data-lang="zh">立即预订</span>
+  </a>
+  <div class="lang-switcher">
+    <button class="lang-btn" onclick="setLang('fr'); closeMobileMenu()">FR</button>
+    <button class="lang-btn" onclick="setLang('en'); closeMobileMenu()">EN</button>
+    <button class="lang-btn" onclick="setLang('zh'); closeMobileMenu()">中文</button>
   </div>
 </div>
 
+<!-- ========== HERO ========== -->
+<section class="blog-hero">
+  <div class="blog-hero-inner">
+    <span class="blog-hero-label">
+      <span data-lang="fr">Journal de la villa</span>
+      <span data-lang="en">Villa Journal</span>
+      <span data-lang="zh">别墅日记</span>
+    </span>
+    <h1 class="blog-hero-title">
+      <span data-lang="fr">Inspirations <em>Balinaises</em></span>
+      <span data-lang="en">Balinese <em>Inspirations</em></span>
+      <span data-lang="zh">巴厘岛 <em>灵感</em></span>
+    </h1>
+    <p class="blog-hero-sub">
+      <span data-lang="fr">Activités, culture, gastronomie et conseils voyage pour vivre Ubud et Bali comme jamais.</span>
+      <span data-lang="en">Activities, culture, gastronomy and travel tips to experience Ubud and Bali like never before.</span>
+      <span data-lang="zh">活动、文化、美食和旅行攻略，带您以前所未有的方式体验乌布和巴厘岛。</span>
+    </p>
+  </div>
+</section>
+
+<!-- ========== FILTERS ========== -->
 <div class="filters">
-  <button class="filter-btn active" onclick="filterArticles('all', this)">Tous</button>
-  <button class="filter-btn" onclick="filterArticles('Activités', this)">🌿 Activités</button>
-  <button class="filter-btn" onclick="filterArticles('Gastronomie', this)">🍜 Gastronomie</button>
-  <button class="filter-btn" onclick="filterArticles('Culture & Spiritualité', this)">🛕 Culture</button>
-  <button class="filter-btn" onclick="filterArticles('Nature', this)">🌾 Nature</button>
-  <button class="filter-btn" onclick="filterArticles('La Villa', this)">🏡 La Villa</button>
+  <button class="filter-btn active" onclick="filterArticles('all', this)">
+    <span data-lang="fr">Tous</span>
+    <span data-lang="en">All</span>
+    <span data-lang="zh">全部</span>
+  </button>
+  <button class="filter-btn" onclick="filterArticles('activities', this)">
+    <span data-lang="fr">🌿 Activités</span>
+    <span data-lang="en">🌿 Activities</span>
+    <span data-lang="zh">🌿 活动</span>
+  </button>
+  <button class="filter-btn" onclick="filterArticles('gastronomy', this)">
+    <span data-lang="fr">🍜 Gastronomie</span>
+    <span data-lang="en">🍜 Gastronomy</span>
+    <span data-lang="zh">🍜 美食</span>
+  </button>
+  <button class="filter-btn" onclick="filterArticles('culture', this)">
+    <span data-lang="fr">🛕 Culture</span>
+    <span data-lang="en">🛕 Culture</span>
+    <span data-lang="zh">🛕 文化</span>
+  </button>
+  <button class="filter-btn" onclick="filterArticles('nature', this)">
+    <span data-lang="fr">🌾 Nature</span>
+    <span data-lang="en">🌾 Nature</span>
+    <span data-lang="zh">🌾 自然</span>
+  </button>
+  <button class="filter-btn" onclick="filterArticles('villa', this)">
+    <span data-lang="fr">🏡 La Villa</span>
+    <span data-lang="en">🏡 The Villa</span>
+    <span data-lang="zh">🏡 别墅</span>
+  </button>
 </div>
 
+<!-- ========== GRID ========== -->
 <div class="blog-grid" id="blogGrid">
-  <!-- Article mis en avant (votre premier article) -->
-  <div class="article-featured" data-cat="Activités">
+
+  <!-- ARTICLE PRINCIPAL — ACTIVITÉS UBUD -->
+  <article class="article-featured" data-cat="activities" onclick="openArticle('ubud-activities')">
     <div class="article-featured-img-placeholder">🌿</div>
     <div class="article-featured-body">
-      <span class="article-featured-label">À la une · Activités · Français</span>
-      <h2 class="article-featured-title">Ubud : les secrets d'une île qui transforme les âmes</h2>
-      <p class="article-featured-excerpt">Il existe des endroits sur terre qui ne se visitent pas — ils se ressentent. Ubud, nichée au cœur des collines verdoyantes de Bali, offre une expérience rare : celle de ralentir, de contempler, et de se laisser envoûter par la beauté du monde.</p>
-      <a href="/blog/activites-ubud.html" class="article-featured-link">Lire l'article →</a>
+      <span class="article-featured-label">
+        <span data-lang="fr">À la une · Activités</span>
+        <span data-lang="en">Featured · Activities</span>
+        <span data-lang="zh">精选 · 活动</span>
+      </span>
+      <h2 class="article-featured-title">
+        <span data-lang="fr">Ubud : les secrets d'une île qui transforme les âmes</span>
+        <span data-lang="en">Ubud: secrets of an island that transforms souls</span>
+        <span data-lang="zh">乌布：改变灵魂的岛屿秘境</span>
+      </h2>
+      <p class="article-featured-excerpt">
+        <span data-lang="fr">Il existe des endroits sur terre qui ne se visitent pas — ils se ressentent. Ubud, nichée au cœur des collines verdoyantes de Bali, est de ceux-là. Découvrez nos activités incontournables pour une expérience inoubliable.</span>
+        <span data-lang="en">There are places on earth that are not visited — they are felt. Ubud, nestled in the heart of Bali's verdant hills, is one of them. Discover our must-do activities for an unforgettable experience.</span>
+        <span data-lang="zh">世界上有些地方不是用来参观的，而是用来感受的。乌布，藏于巴厘岛郁郁葱葱的山丘之中，便是其中之一。探索我们推荐的必做活动，开启一段难忘的旅程。</span>
+      </p>
+      <a class="article-read-more" href="#" onclick="event.preventDefault(); openArticle('ubud-activities')">
+        <span data-lang="fr">Lire l'article →</span>
+        <span data-lang="en">Read article →</span>
+        <span data-lang="zh">阅读文章 →</span>
+      </a>
     </div>
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="blog-sidebar">
+
+    <!-- SIDEBAR CARD 2 — Floating Breakfast -->
+    <div class="sidebar-card" data-cat="villa" onclick="openArticle('floating-breakfast')">
+      <span class="sidebar-label">
+        <span data-lang="fr">🏡 La Villa</span>
+        <span data-lang="en">🏡 The Villa</span>
+        <span data-lang="zh">🏡 别墅</span>
+      </span>
+      <h3 class="sidebar-title">
+        <span data-lang="fr">L'art du floating breakfast à Villa Mimpi</span>
+        <span data-lang="en">The art of the floating breakfast at Villa Mimpi</span>
+        <span data-lang="zh">Villa Mimpi 的漂浮早餐艺术</span>
+      </h3>
+      <p class="sidebar-excerpt">
+        <span data-lang="fr">Commencez votre journée dans la piscine à débordement avec un plateau de fruits tropicaux et de spécialités balinaises, face aux rizières d'Ubud.</span>
+        <span data-lang="en">Start your day in the infinity pool with a tray of tropical fruits and Balinese specialties, overlooking the rice fields of Ubud.</span>
+        <span data-lang="zh">在无边泳池中开启新的一天，享用满满的热带水果和巴厘岛特色美食，面朝乌布梯田美景。</span>
+      </p>
+      <a class="article-read-more" href="#" onclick="event.preventDefault(); openArticle('floating-breakfast')">
+        <span data-lang="fr">Lire →</span>
+        <span data-lang="en">Read →</span>
+        <span data-lang="zh">阅读 →</span>
+      </a>
+    </div>
+
+    <!-- SIDEBAR CTA — Réservation -->
+    <div class="sidebar-card sidebar-cta">
+      <span class="sidebar-label">
+        <span data-lang="fr">Réservation</span>
+        <span data-lang="en">Booking</span>
+        <span data-lang="zh">预订</span>
+      </span>
+      <h3 class="sidebar-title">
+        <span data-lang="fr">Vivez l'expérience Mimpi</span>
+        <span data-lang="en">Live the Mimpi experience</span>
+        <span data-lang="zh">体验 Mimpi 的非凡时光</span>
+      </h3>
+      <p>
+        <span data-lang="fr">3 chambres · Piscine à débordement · Vue rizières · Chef privé · Massage balinais</span>
+        <span data-lang="en">3 bedrooms · Infinity pool · Rice field view · Private chef · Balinese massage</span>
+        <span data-lang="zh">3间卧室 · 无边泳池 · 稻田美景 · 私人厨师 · 巴厘岛按摩</span>
+      </p>
+      <a class="cta-btn" href="https://www.airbnb.fr/rooms/your-listing" target="_blank" rel="noopener">
+        <span data-lang="fr">Réserver sur Airbnb</span>
+        <span data-lang="en">Book on Airbnb</span>
+        <span data-lang="zh">在 Airbnb 上预订</span>
+      </a>
+    </div>
+
+  </aside>
+
+  <!-- EMPTY STATE -->
+  <div class="empty-state" id="emptyState">
+    <div class="empty-state-icon">🌿</div>
+    <p>
+      <span data-lang="fr">Aucun article dans cette catégorie pour le moment.</span>
+      <span data-lang="en">No articles in this category yet.</span>
+      <span data-lang="zh">此分类暂无文章。</span>
+    </p>
   </div>
 
-  <!-- Prochains articles -->
-  <div class="coming-soon">
-    <div class="coming-soon-icon">🌿</div>
-    <h3>D'autres inspirations arrivent bientôt…</h3>
-    <p>Rizières, temples, gastronomie balinaise, conseils voyage — de nouveaux articles sont en préparation pour enrichir votre séjour à Ubud.</p>
+</div>
+
+<!-- ========== FULL ARTICLE VIEWS ========== -->
+
+<!-- Article 1: Activités Ubud -->
+<div class="article-full" id="article-ubud-activities">
+  <div class="article-full-inner">
+    <button class="article-full-back" onclick="closeArticle()">
+      ← <span data-lang="fr">Retour au blog</span>
+      <span data-lang="en">Back to blog</span>
+      <span data-lang="zh">返回博客</span>
+    </button>
+    <span class="article-full-label">
+      <span data-lang="fr">Activités · 8 min de lecture</span>
+      <span data-lang="en">Activities · 8 min read</span>
+      <span data-lang="zh">活动 · 阅读8分钟</span>
+    </span>
+    <h1 class="article-full-title">
+      <span data-lang="fr">Ubud : les secrets d'une île qui transforme les âmes</span>
+      <span data-lang="en">Ubud: secrets of an island that transforms souls</span>
+      <span data-lang="zh">乌布：改变灵魂的岛屿秘境</span>
+    </h1>
+    <div class="article-full-meta">
+      <span data-lang="fr">Mai 2025 · Villa Mimpi Ubud</span>
+      <span data-lang="en">May 2025 · Villa Mimpi Ubud</span>
+      <span data-lang="zh">2025年5月 · Villa Mimpi Ubud</span>
+    </div>
+    <div class="article-full-content">
+
+      <!-- FRANÇAIS -->
+      <div data-lang="fr">
+        <p>Il existe des endroits sur terre qui ne se visitent pas — ils se <em>ressentent</em>. Ubud, nichée au cœur des collines verdoyantes de Bali, est de ceux-là. Loin de l'agitation des plages du sud, cette cité des arts et de la spiritualité offre une expérience rare : celle de ralentir, de contempler, et de se laisser envoûter par la beauté du monde. Installés à la <strong>Villa Mimpi Ubud</strong>, entre piscine à débordement et horizon de rizières dorées, vous serez au cœur de tout ce que cette ville a de plus précieux à offrir.</p>
+        <h2>S'immerger dans la nature sacrée des rizières</h2>
+        <p>La première chose que l'on fait à Ubud, c'est ouvrir les yeux. Les <strong>terrasses de Tegallalang</strong> sont parmi les plus photographiées d'Asie — et pour cause. Ces rizières en escalier, sculptées par des générations de paysans balinais selon le système d'irrigation <em>subak</em> inscrit à l'UNESCO, forment un tableau vivant d'un vert impossible. Levez-vous à l'aube pour les découvrir dans la lumière dorée du matin, avant que les premiers visiteurs n'arrivent.</p>
+        <p>Plus intimiste, la <strong>forêt des singes de Sangeh</strong> ou les sentiers de randonnée le long de la rivière Campuhan offrent une communion silencieuse avec la jungle tropicale. Depuis la Villa Mimpi, ces trésors naturels sont à quelques minutes seulement.</p>
+        <h2>Plonger dans la spiritualité balinaise</h2>
+        <p>Ubud est une ville qui prie. Les temples y sont partout — certains perchés au bord de précipices vertigineux, d'autres cachés dans des forêts brumeuses. Le <strong>Temple de Tirta Empul</strong>, lieu de purification rituelle où l'on se baigne dans des sources sacrées, est une expérience profondément émouvante. Au coucher du soleil, le <strong>Temple de Pura Ulun Danu Batur</strong> offre un panorama mystique sur le lac du même nom.</p>
+        <p>Les cérémonies balinaises — cremations, offrandes, danses Kecak — se déroulent au quotidien. Demandez à votre équipe à la Villa Mimpi de vous renseigner sur le calendrier des événements pendant votre séjour.</p>
+        <h2>La scène culinaire et artistique</h2>
+        <p>Ubud est aussi un festival permanent des arts et de la gastronomie. Les marchés du matin regorgent de fruits exotiques, d'épices parfumées et d'artisanat local. Les restaurants proposent tout, du <em>warung</em> balinais traditionnel au restaurant gastronomique primé. Ne manquez pas le Mozaic, une institution culinaire, ou le Locavore pour une cuisine locale réinventée.</p>
+        <p>Pour une expérience encore plus intime, laissez le <strong>chef privé de la Villa Mimpi</strong> vous préparer un dîner aux chandelles avec des produits du marché local — une soirée dont vous vous souviendrez longtemps.</p>
+        <hr>
+        <p>Ubud n'est pas une destination. C'est une transformation. Et la Villa Mimpi est l'écrin parfait pour la vivre pleinement.</p>
+        <div class="article-seo-box">
+          <h4>Meta description SEO</h4>
+          <p>Découvrez les meilleures activités à Ubud, Bali : rizières de Tegallalang, temples sacrés, gastronomie locale. Séjournez à Villa Mimpi Ubud pour une expérience inoubliable.</p>
+          <br><small><strong>Mots-clés :</strong> activités Ubud, que faire à Ubud, Tegallalang, temples Bali, villa de luxe Ubud</small>
+        </div>
+      </div>
+
+      <!-- ENGLISH -->
+      <div data-lang="en">
+        <p>There are places on earth that are not visited — they are <em>felt</em>. Ubud, nestled in the heart of Bali's verdant hills, is one of them. Far from the bustle of the southern beaches, this city of arts and spirituality offers a rare experience: slowing down, contemplating, and letting yourself be enchanted by the beauty of the world. Settled at <strong>Villa Mimpi Ubud</strong>, between an infinity pool and a horizon of golden rice fields, you will be at the heart of everything this town has most precious to offer.</p>
+        <h2>Immersing yourself in the sacred nature of the rice fields</h2>
+        <p>The first thing you do in Ubud is open your eyes. The <strong>Tegallalang terraces</strong> are among the most photographed in Asia — and for good reason. These stepped rice paddies, sculpted by generations of Balinese farmers using the UNESCO-inscribed <em>subak</em> irrigation system, form a living tableau of an impossible green. Rise at dawn to discover them in the golden morning light, before the first visitors arrive.</p>
+        <p>More intimate, the <strong>Sangeh Monkey Forest</strong> or the hiking trails along the Campuhan River offer silent communion with the tropical jungle. From Villa Mimpi, these natural treasures are just minutes away.</p>
+        <h2>Diving into Balinese spirituality</h2>
+        <p>Ubud is a city that prays. Temples are everywhere — some perched on the edge of vertiginous cliffs, others hidden in misty forests. The <strong>Tirta Empul Temple</strong>, a ritual purification site where you bathe in sacred springs, is a deeply moving experience. At sunset, the <strong>Pura Ulun Danu Batur Temple</strong> offers a mystical panorama over the lake of the same name.</p>
+        <p>Balinese ceremonies — cremations, offerings, Kecak dances — take place daily. Ask your team at Villa Mimpi about the event calendar during your stay.</p>
+        <h2>The culinary and artistic scene</h2>
+        <p>Ubud is also a permanent festival of arts and gastronomy. The morning markets overflow with exotic fruits, fragrant spices and local crafts. Restaurants offer everything from traditional Balinese <em>warungs</em> to award-winning fine dining. Don't miss Mozaic, a culinary institution, or Locavore for a reinvented local cuisine.</p>
+        <p>For an even more intimate experience, let <strong>Villa Mimpi's private chef</strong> prepare a candlelit dinner with local market produce — an evening you will remember for a long time.</p>
+        <hr>
+        <p>Ubud is not a destination. It is a transformation. And Villa Mimpi is the perfect setting to live it to the fullest.</p>
+        <div class="article-seo-box">
+          <h4>SEO Meta Description</h4>
+          <p>Discover the best activities in Ubud, Bali: Tegallalang rice terraces, sacred temples, local gastronomy. Stay at Villa Mimpi Ubud for an unforgettable experience.</p>
+          <br><small><strong>Keywords:</strong> Ubud activities, things to do in Ubud, Tegallalang, Bali temples, luxury villa Ubud</small>
+        </div>
+      </div>
+
+      <!-- 中文 -->
+      <div data-lang="zh">
+        <p>世界上有些地方不是用来参观的，而是用来<em>感受</em>的。乌布，藏于巴厘岛郁郁葱葱的山丘之中，便是其中之一。远离南部海滩的喧嚣，这座艺术与精神之城提供了一种罕见的体验：放慢脚步，静心凝望，让自己沉浸在世界的美丽之中。入住 <strong>Villa Mimpi Ubud</strong>，在无边泳池与金色稻田的地平线之间，您将置身于这座小镇最珍贵的一切之中。</p>
+        <h2>沉浸于稻田的神圣自然之中</h2>
+        <p>来到乌布，第一件事便是睁开双眼。<strong>德格拉朗梯田</strong>是亚洲最受摄影爱好者青睐的地方之一，这并非没有原因。这些层叠的稻田由世代巴厘岛农民按照联合国教科文组织认定的<em>苏巴克</em>灌溉系统精心耕作而成，构成了一幅不可思议的翠绿画卷。在晨光中黎明前往，可在第一批游客抵达之前感受最纯粹的宁静。</p>
+        <p>更为私密的<strong>桑格猴子森林</strong>或坎普汉河沿岸的徒步小径，让您在热带丛林中寻获一份宁静。从 Villa Mimpi 出发，这些自然瑰宝只需数分钟即可抵达。</p>
+        <h2>深入巴厘岛的精神世界</h2>
+        <p>乌布是一座祈祷之城。神庙无处不在——有的悬崖峭壁之上，有的隐于迷雾森林之中。<strong>蒂尔塔恩普尔圣泉寺</strong>是举行净化仪式之地，在圣泉中沐浴是一种令人深受感动的体验。日落时分，<strong>普拉乌伦达努巴图尔神庙</strong>提供了俯瞰同名湖泊的神秘全景。</p>
+        <p>巴厘岛的仪式——火葬、供奉、卡恰克舞蹈——每日都在进行。请向 Villa Mimpi 的团队询问您入住期间的活动日历。</p>
+        <h2>美食与艺术殿堂</h2>
+        <p>乌布同时也是一座艺术与美食的永恒节日。早市上摆满了异国水果、芬芳香料和本地手工艺品。餐厅从传统巴厘岛<em>小吃摊</em>到屡获殊荣的精致餐厅，应有尽有。不要错过美食圣地 Mozaic，以及以本地食材重新演绎地方风味的 Locavore。</p>
+        <p>若想体验更为私密的浪漫，可请 <strong>Villa Mimpi 的私人厨师</strong>以当地市场的新鲜食材为您准备一顿烛光晚餐——一个令您长久回味的夜晚。</p>
+        <hr>
+        <p>乌布不是一个目的地，而是一次蜕变。而 Villa Mimpi，正是您完全融入这份蜕变的最佳舞台。</p>
+        <div class="article-seo-box">
+          <h4>SEO 元描述</h4>
+          <p>探索乌布，巴厘岛的最佳活动：德格拉朗梯田、神圣寺庙、当地美食。入住 Villa Mimpi Ubud，开启难忘之旅。</p>
+          <br><small><strong>关键词：</strong> 乌布活动，乌布旅游攻略，德格拉朗，巴厘岛寺庙，乌布豪华别墅</small>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
+<!-- Article 2: Floating Breakfast -->
+<div class="article-full" id="article-floating-breakfast">
+  <div class="article-full-inner">
+    <button class="article-full-back" onclick="closeArticle()">
+      ← <span data-lang="fr">Retour au blog</span>
+      <span data-lang="en">Back to blog</span>
+      <span data-lang="zh">返回博客</span>
+    </button>
+    <span class="article-full-label">
+      <span data-lang="fr">La Villa · 5 min de lecture</span>
+      <span data-lang="en">The Villa · 5 min read</span>
+      <span data-lang="zh">别墅 · 阅读5分钟</span>
+    </span>
+    <h1 class="article-full-title">
+      <span data-lang="fr">L'art du floating breakfast à Villa Mimpi</span>
+      <span data-lang="en">The art of the floating breakfast at Villa Mimpi</span>
+      <span data-lang="zh">Villa Mimpi 的漂浮早餐艺术</span>
+    </h1>
+    <div class="article-full-meta">
+      <span data-lang="fr">Mai 2025 · Villa Mimpi Ubud</span>
+      <span data-lang="en">May 2025 · Villa Mimpi Ubud</span>
+      <span data-lang="zh">2025年5月 · Villa Mimpi Ubud</span>
+    </div>
+    <div class="article-full-content">
+
+      <!-- FRANÇAIS -->
+      <div data-lang="fr">
+        <p>Il existe des rituels de voyage qui s'impriment à jamais dans la mémoire. Le <strong>floating breakfast</strong> de la Villa Mimpi Ubud en fait partie. Imaginez : au lever du soleil, vous glissez dans la piscine à débordement. Face à vous, les rizières d'Ubud s'éveillent dans une lumière dorée et brumeuse. Et sur l'eau, un plateau délicatement orné vous attend — fruits tropicaux, pancakes balinais, jus de fruits frais, fleurs d'hibiscus.</p>
+        <h2>Une expérience qui se mérite</h2>
+        <p>Le floating breakfast n'est pas simplement un repas — c'est un <em>moment suspendu</em>. La piscine à débordement de la Villa Mimpi, avec sa vue panoramique sur 360° sur les rizières, devient le cadre d'une scène digne des plus beaux rêves. Notre équipe installe soigneusement le plateau la veille et vous réveille au bon moment pour profiter de la lumière parfaite.</p>
+        <h2>Ce qui est inclus</h2>
+        <p>Notre floating breakfast comprend une sélection de <strong>fruits tropicaux</strong> de saison (mangue, papaye, dragon fruit, salak), des spécialités balinaises (nasi goreng, pisang goreng), une boisson chaude au choix et des fleurs fraîches pour la décoration. Il peut être personnalisé selon vos préférences alimentaires — végétalien, sans gluten, enfants.</p>
+        <p>Pour réserver cette expérience lors de votre séjour à la Villa Mimpi, il vous suffit de nous contacter à l'avance par WhatsApp ou email.</p>
+        <hr>
+        <p>Le floating breakfast à la Villa Mimpi Ubud, c'est plus qu'un petit-déjeuner. C'est le début d'une journée parfaite à Bali.</p>
+      </div>
+
+      <!-- ENGLISH -->
+      <div data-lang="en">
+        <p>There are travel rituals that are forever imprinted in memory. The <strong>floating breakfast</strong> at Villa Mimpi Ubud is one of them. Imagine: at sunrise, you slip into the infinity pool. Before you, Ubud's rice fields awaken in a golden, misty light. And on the water, a delicately adorned tray awaits you — tropical fruits, Balinese pancakes, fresh fruit juices, hibiscus flowers.</p>
+        <h2>An experience worth savoring</h2>
+        <p>The floating breakfast is not simply a meal — it is a <em>suspended moment</em>. Villa Mimpi's infinity pool, with its 360° panoramic view over the rice fields, becomes the setting for a scene worthy of the most beautiful dreams. Our team carefully sets up the tray the evening before and wakes you at the right moment to enjoy the perfect light.</p>
+        <h2>What's included</h2>
+        <p>Our floating breakfast includes a selection of seasonal <strong>tropical fruits</strong> (mango, papaya, dragon fruit, salak), Balinese specialties (nasi goreng, pisang goreng), a hot drink of your choice and fresh flowers for decoration. It can be customized according to your dietary preferences — vegan, gluten-free, children's options available.</p>
+        <p>To book this experience during your stay at Villa Mimpi, simply contact us in advance by WhatsApp or email.</p>
+        <hr>
+        <p>The floating breakfast at Villa Mimpi Ubud is more than a breakfast. It is the beginning of a perfect day in Bali.</p>
+      </div>
+
+      <!-- 中文 -->
+      <div data-lang="zh">
+        <p>有些旅行仪式会永久地印刻在记忆之中。Villa Mimpi Ubud 的<strong>漂浮早餐</strong>便是其中之一。想象一下：日出时分，您轻轻滑入无边泳池。眼前，乌布的稻田在金色的晨雾中缓缓苏醒。而水面上，一只精心布置的托盘静静等待着您——热带水果、巴厘岛煎饼、新鲜果汁、芙蓉花朵。</p>
+        <h2>值得细细品味的体验</h2>
+        <p>漂浮早餐不仅仅是一顿饭，更是一个<em>悬停于时间之外的瞬间</em>。Villa Mimpi 的无边泳池拥有360°全景稻田视野，在这里，您将置身于如梦似幻的绝美画面之中。我们的团队会在前一晚精心准备好托盘，并在最佳时刻将您唤醒，让您沐浴在最完美的晨光之中。</p>
+        <h2>包含内容</h2>
+        <p>我们的漂浮早餐包含精选时令<strong>热带水果</strong>（芒果、木瓜、火龙果、蛇皮果）、巴厘岛特色美食（炒饭、炸香蕉）、一杯您喜爱的热饮以及用于装饰的新鲜花朵。可根据您的饮食需求进行定制——纯素、无麸质、儿童选项均可。</p>
+        <p>如需在 Villa Mimpi 入住期间预订此项体验，只需提前通过 WhatsApp 或电子邮件与我们联系即可。</p>
+        <hr>
+        <p>Villa Mimpi Ubud 的漂浮早餐，不只是一顿早餐，更是在巴厘岛完美一天的序章。</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
 <footer>
-  <span>© 2024 Villa Mimpi Ubud — Ubud, Bali, Indonésie</span>
-  <a href="/admin/">⚙️ Tableau de bord</a>
+  <div class="footer-logo">Villa <span>Mimpi</span> Ubud</div>
+  <nav>
+    <a href="/#story">
+      <span data-lang="fr">La villa</span><span data-lang="en">The villa</span><span data-lang="zh">别墅</span>
+    </a>
+    <a href="/blog/">Blog</a>
+    <a href="/#booking">
+      <span data-lang="fr">Réservation</span><span data-lang="en">Booking</span><span data-lang="zh">预订</span>
+    </a>
+  </nav>
 </footer>
 
+<!-- ========== JS ========== -->
 <script>
-  // Netlify Identity
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
-      }
-    });
+  // ── LANGUE ──
+  let currentLang = localStorage.getItem('vmLang') || 'fr';
+
+  function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('vmLang', lang);
+    applyLang();
   }
 
+  function applyLang() {
+    // Show/hide data-lang elements
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.style.display = (el.dataset.lang === currentLang) ? '' : 'none';
+    });
+    // Active button
+    document.querySelectorAll('[data-lang-btn]').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.langBtn === currentLang);
+    });
+    // html lang
+    document.documentElement.lang = currentLang;
+  }
+
+  // ── FILTERS ──
   function filterArticles(cat, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const cards = document.querySelectorAll('[data-cat]');
-    cards.forEach(card => {
-      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+
+    const articles = document.querySelectorAll('[data-cat]');
+    let visible = 0;
+    articles.forEach(el => {
+      const show = (cat === 'all') || (el.dataset.cat === cat);
+      el.style.display = show ? '' : 'none';
+      if (show) visible++;
     });
+
+    const empty = document.getElementById('emptyState');
+    empty.classList.toggle('visible', visible === 0);
   }
+
+  // ── ARTICLE OPEN / CLOSE ──
+  function openArticle(id) {
+    document.getElementById('article-' + id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+    window.scrollTo(0, 0);
+  }
+  function closeArticle() {
+    document.querySelectorAll('.article-full').forEach(a => a.classList.remove('open'));
+    document.body.style.overflow = '';
+  }
+
+  // ── MOBILE MENU ──
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburger');
+    if (menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => { menu.style.display = 'none'; }, 300);
+    } else {
+      menu.style.display = 'flex';
+      setTimeout(() => { menu.classList.add('open'); btn.classList.add('open'); }, 10);
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  function closeMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { menu.style.display = 'none'; }, 300);
+  }
+
+  // ── INIT ──
+  applyLang();
 </script>
 </body>
 </html>
