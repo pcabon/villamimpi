@@ -304,7 +304,43 @@
   }
 
   /* ── LANG VISIBILITY ── */
-  [data-lang] { display: none; }
+  /* All lang spans hidden by default */
+  [data-lang] { display: none !important; }
+
+  /* Inline elements (span, button text, labels) */
+  body.lang-fr span[data-lang="fr"],
+  body.lang-fr a[data-lang="fr"],
+  body.lang-fr small[data-lang="fr"] { display: inline !important; }
+
+  body.lang-en span[data-lang="en"],
+  body.lang-en a[data-lang="en"],
+  body.lang-en small[data-lang="en"] { display: inline !important; }
+
+  body.lang-zh span[data-lang="zh"],
+  body.lang-zh a[data-lang="zh"],
+  body.lang-zh small[data-lang="zh"] { display: inline !important; }
+
+  /* Block elements (div, p, h1-h4) */
+  body.lang-fr div[data-lang="fr"],
+  body.lang-fr p[data-lang="fr"],
+  body.lang-fr h1[data-lang="fr"],
+  body.lang-fr h2[data-lang="fr"],
+  body.lang-fr h3[data-lang="fr"],
+  body.lang-fr h4[data-lang="fr"] { display: block !important; }
+
+  body.lang-en div[data-lang="en"],
+  body.lang-en p[data-lang="en"],
+  body.lang-en h1[data-lang="en"],
+  body.lang-en h2[data-lang="en"],
+  body.lang-en h3[data-lang="en"],
+  body.lang-en h4[data-lang="en"] { display: block !important; }
+
+  body.lang-zh div[data-lang="zh"],
+  body.lang-zh p[data-lang="zh"],
+  body.lang-zh h1[data-lang="zh"],
+  body.lang-zh h2[data-lang="zh"],
+  body.lang-zh h3[data-lang="zh"],
+  body.lang-zh h4[data-lang="zh"] { display: block !important; }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
@@ -314,7 +350,7 @@
   .article-featured, .sidebar-card { animation: fadeUp 0.5s ease both; }
 </style>
 </head>
-<body>
+<body class="lang-fr">
 
 <!-- ========== NAV ========== -->
 <nav>
@@ -709,12 +745,10 @@
   }
 
   function applyLang() {
-    document.querySelectorAll('[data-lang]').forEach(el => {
-      const match = el.dataset.lang === currentLang;
-      const tag = el.tagName;
-      const blockTags = ['DIV', 'P', 'H1', 'H2', 'H3', 'H4', 'SECTION', 'ARTICLE'];
-      el.style.display = match ? (blockTags.includes(tag) ? 'block' : 'inline') : 'none';
-    });
+    // Set body class — CSS handles all show/hide
+    document.body.className = document.body.className
+      .replace(/\blang-\w+\b/g, '').trim() + ' lang-' + currentLang;
+    // Active lang buttons
     document.querySelectorAll('[data-lang-btn]').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.langBtn === currentLang);
     });
