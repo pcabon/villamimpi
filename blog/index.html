@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head><title>Test</title></head>
+<head><title>Test langue</title></head>
 <body>
-<h1 id="msg">FICHIER MIS À JOUR</h1>
+<p>Langue dans l'URL : <strong id="lang">...</strong></p>
+<br>
+<a href="/blog/?lang=fr">FR</a> | 
+<a href="/blog/?lang=en">EN</a> | 
+<a href="/blog/?lang=zh">ZH</a>
+<script>
+  var p = new URLSearchParams(window.location.search);
+  document.getElementById('lang').textContent = p.get('lang') || 'aucune (défaut fr)';
+</script>
 </body>
 </html>
