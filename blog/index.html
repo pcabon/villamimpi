@@ -304,7 +304,15 @@
   }
 
   /* ── LANG VISIBILITY ── */
-  [data-lang] { display: none; }
+  /* French shown by default; JS overrides on language change */
+  [data-lang="en"],
+  [data-lang="zh"] { display: none; }
+  [data-lang="fr"] { display: inline; }
+
+  /* Block-level lang containers (article text divs) */
+  div[data-lang="en"],
+  div[data-lang="zh"] { display: none; }
+  div[data-lang="fr"] { display: block; }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
@@ -709,15 +717,19 @@
   }
 
   function applyLang() {
-    // Show/hide data-lang elements
+    // Handle all data-lang elements
     document.querySelectorAll('[data-lang]').forEach(el => {
-      el.style.display = (el.dataset.lang === currentLang) ? '' : 'none';
+      const match = el.dataset.lang === currentLang;
+      if (el.tagName === 'DIV') {
+        el.style.display = match ? 'block' : 'none';
+      } else {
+        el.style.display = match ? '' : 'none';
+      }
     });
     // Active button
     document.querySelectorAll('[data-lang-btn]').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.langBtn === currentLang);
     });
-    // html lang
     document.documentElement.lang = currentLang;
   }
 
