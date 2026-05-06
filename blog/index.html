@@ -119,7 +119,7 @@
 </style>
 </head>
 <body>
- 
+
 <nav>
   <a href="/" class="nav-logo">Villa <span>Mimpi</span> Ubud</a>
   <ul class="nav-links">
@@ -136,7 +136,7 @@
   </div>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
- 
+
 <div class="mobile-menu" id="mobileMenu">
   <a href="/#story" onclick="closeMobileMenu()" id="mnav-villa">La villa</a>
   <a href="/#rooms" onclick="closeMobileMenu()" id="mnav-rooms">Chambres</a>
@@ -149,9 +149,9 @@
     <a href="/blog/?lang=zh" class="lang-btn" id="mbtn-zh">中文</a>
   </div>
 </div>
- 
+
 <!-- FRANÇAIS -->
-<div id="page-fr">
+<div id="page-fr" style="display:none">
   <section class="blog-hero">
     <div class="blog-hero-inner">
       <span class="blog-hero-label">Journal de la villa</span>
@@ -193,7 +193,7 @@
     </aside>
   </div>
 </div>
- 
+
 <!-- ENGLISH -->
 <div id="page-en" style="display:none">
   <section class="blog-hero">
@@ -237,7 +237,7 @@
     </aside>
   </div>
 </div>
- 
+
 <!-- 中文 -->
 <div id="page-zh" style="display:none">
   <section class="blog-hero">
@@ -281,7 +281,7 @@
     </aside>
   </div>
 </div>
- 
+
 <!-- ARTICLES FR -->
 <div class="article-full" id="art-fr-ubud-activities">
   <div class="article-full-inner">
@@ -315,7 +315,7 @@
     </div>
   </div>
 </div>
- 
+
 <!-- ARTICLES EN -->
 <div class="article-full" id="art-en-ubud-activities">
   <div class="article-full-inner">
@@ -349,7 +349,7 @@
     </div>
   </div>
 </div>
- 
+
 <!-- ARTICLES ZH -->
 <div class="article-full" id="art-zh-ubud-activities">
   <div class="article-full-inner">
@@ -383,7 +383,7 @@
     </div>
   </div>
 </div>
- 
+
 <footer>
   <div class="footer-logo">Villa <span>Mimpi</span> Ubud</div>
   <nav>
@@ -392,7 +392,7 @@
     <a href="/#booking" id="footerBook">Réservation</a>
   </nav>
 </footer>
- 
+
 <script>
   function getLang() {
     var params = new URLSearchParams(window.location.search);
@@ -401,21 +401,21 @@
     try { var s = localStorage.getItem('vmLang'); if (s === 'en' || s === 'zh') return s; } catch(e) {}
     return 'fr';
   }
- 
+
   var lang = getLang();
- 
+
   var T = {
     fr: { villa:'La villa', rooms:'Chambres', exp:'Expériences', book:'Réserver' },
     en: { villa:'The villa', rooms:'Rooms', exp:'Experiences', book:'Book Now' },
     zh: { villa:'别墅', rooms:'客房', exp:'体验', book:'立即预订' }
   };
- 
+
   function buildPage() {
     // Afficher la bonne page
     document.getElementById('page-fr').style.display = lang === 'fr' ? 'block' : 'none';
     document.getElementById('page-en').style.display = lang === 'en' ? 'block' : 'none';
     document.getElementById('page-zh').style.display = lang === 'zh' ? 'block' : 'none';
- 
+
     // Bouton actif
     document.getElementById('btn-fr').className  = 'lang-btn' + (lang === 'fr' ? ' active' : '');
     document.getElementById('btn-en').className  = 'lang-btn' + (lang === 'en' ? ' active' : '');
@@ -423,7 +423,7 @@
     document.getElementById('mbtn-fr').className = 'lang-btn' + (lang === 'fr' ? ' active' : '');
     document.getElementById('mbtn-en').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
     document.getElementById('mbtn-zh').className = 'lang-btn' + (lang === 'zh' ? ' active' : '');
- 
+
     // Textes nav
     var t = T[lang];
     document.getElementById('nav-villa').textContent  = t.villa;
@@ -434,10 +434,10 @@
     document.getElementById('mnav-rooms').textContent = t.rooms;
     document.getElementById('mnav-exp').textContent   = t.exp;
     document.getElementById('mnav-book').textContent  = t.book;
- 
+
     document.documentElement.lang = lang;
   }
- 
+
   function filterArticles(cat, btn, l) {
     var page = document.getElementById('page-' + l);
     page.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
@@ -446,7 +446,7 @@
       el.style.display = (cat === 'all' || el.dataset.cat === cat) ? '' : 'none';
     });
   }
- 
+
   function openArticle(l, id) {
     document.getElementById('art-' + l + '-' + id).classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -458,7 +458,7 @@
   }
   function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
   function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
- 
+
   buildPage();
 </script>
 </body>
