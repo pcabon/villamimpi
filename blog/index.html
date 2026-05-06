@@ -122,14 +122,32 @@
 
 <nav>
   <a href="/" class="nav-logo">Villa <span>Mimpi</span> Ubud</a>
-  <ul class="nav-links" id="navLinks"></ul>
-  <div class="lang-switcher" id="langSwitcher"></div>
+  <ul class="nav-links">
+    <li><a href="/#story" id="nav-villa">La villa</a></li>
+    <li><a href="/#rooms" id="nav-rooms">Chambres</a></li>
+    <li><a href="/#experience" id="nav-exp">Expériences</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#booking" class="nav-book" id="nav-book">Réserver</a></li>
+  </ul>
+  <div class="lang-switcher">
+    <a href="/blog/?lang=fr" class="lang-btn" id="btn-fr">FR</a>
+    <a href="/blog/?lang=en" class="lang-btn" id="btn-en">EN</a>
+    <a href="/blog/?lang=zh" class="lang-btn" id="btn-zh">中文</a>
+  </div>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <div id="mobileNavLinks"></div>
-  <div class="lang-switcher" style="margin-top:1rem" id="mobileLangSwitcher"></div>
+  <a href="/#story" onclick="closeMobileMenu()" id="mnav-villa">La villa</a>
+  <a href="/#rooms" onclick="closeMobileMenu()" id="mnav-rooms">Chambres</a>
+  <a href="/#experience" onclick="closeMobileMenu()" id="mnav-exp">Expériences</a>
+  <a href="/blog/" onclick="closeMobileMenu()">Blog</a>
+  <a href="/#booking" onclick="closeMobileMenu()" id="mnav-book">Réserver</a>
+  <div class="lang-switcher" style="margin-top:1rem">
+    <a href="/blog/?lang=fr" class="lang-btn" id="mbtn-fr">FR</a>
+    <a href="/blog/?lang=en" class="lang-btn" id="mbtn-en">EN</a>
+    <a href="/blog/?lang=zh" class="lang-btn" id="mbtn-zh">中文</a>
+  </div>
 </div>
 
 <!-- FRANÇAIS -->
@@ -376,62 +394,46 @@
 </footer>
 
 <script>
-  // Lire la langue depuis l'URL : /blog/?lang=en
-  function getLangFromURL() {
+  function getLang() {
     var params = new URLSearchParams(window.location.search);
     var l = params.get('lang');
-    if (l === 'en' || l === 'zh') return l;
+    if (l === 'en' || l === 'zh' || l === 'fr') return l;
+    try { var s = localStorage.getItem('vmLang'); if (s === 'en' || s === 'zh') return s; } catch(e) {}
     return 'fr';
   }
 
-  var lang = getLangFromURL();
+  var lang = getLang();
 
   var T = {
-    fr: { villa:'La villa', rooms:'Chambres', exp:'Expériences', book:'Réserver', reservation:'Réservation' },
-    en: { villa:'The villa', rooms:'Rooms', exp:'Experiences', book:'Book Now', reservation:'Booking' },
-    zh: { villa:'别墅', rooms:'客房', exp:'体验', book:'立即预订', reservation:'预订' }
+    fr: { villa:'La villa', rooms:'Chambres', exp:'Expériences', book:'Réserver' },
+    en: { villa:'The villa', rooms:'Rooms', exp:'Experiences', book:'Book Now' },
+    zh: { villa:'别墅', rooms:'客房', exp:'体验', book:'立即预订' }
   };
 
   function buildPage() {
-    var t = T[lang];
-
     // Afficher la bonne page
-    document.getElementById('page-fr').style.display = (lang === 'fr') ? 'block' : 'none';
-    document.getElementById('page-en').style.display = (lang === 'en') ? 'block' : 'none';
-    document.getElementById('page-zh').style.display = (lang === 'zh') ? 'block' : 'none';
+    document.getElementById('page-fr').style.display = lang === 'fr' ? 'block' : 'none';
+    document.getElementById('page-en').style.display = lang === 'en' ? 'block' : 'none';
+    document.getElementById('page-zh').style.display = lang === 'zh' ? 'block' : 'none';
 
-    // Nav links
-    document.getElementById('navLinks').innerHTML =
-      '<li><a href="/?lang=' + lang + '#story">' + t.villa + '</a></li>' +
-      '<li><a href="/?lang=' + lang + '#rooms">' + t.rooms + '</a></li>' +
-      '<li><a href="/?lang=' + lang + '#experience">' + t.exp + '</a></li>' +
-      '<li><a href="/blog/?lang=' + lang + '" class="active">Blog</a></li>' +
-      '<li><a href="/?lang=' + lang + '#booking" class="nav-book">' + t.book + '</a></li>';
+    // Bouton actif
+    document.getElementById('btn-fr').className  = 'lang-btn' + (lang === 'fr' ? ' active' : '');
+    document.getElementById('btn-en').className  = 'lang-btn' + (lang === 'en' ? ' active' : '');
+    document.getElementById('btn-zh').className  = 'lang-btn' + (lang === 'zh' ? ' active' : '');
+    document.getElementById('mbtn-fr').className = 'lang-btn' + (lang === 'fr' ? ' active' : '');
+    document.getElementById('mbtn-en').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
+    document.getElementById('mbtn-zh').className = 'lang-btn' + (lang === 'zh' ? ' active' : '');
 
-    // Langue switcher
-    var langs = [['fr','FR'],['en','EN'],['zh','中文']];
-    var sw = langs.map(function(l) {
-      var cls = l[0] === lang ? 'lang-btn active' : 'lang-btn';
-      return '<a href="/blog/?lang=' + l[0] + '" class="' + cls + '">' + l[1] + '</a>';
-    }).join('');
-    document.getElementById('langSwitcher').innerHTML = sw;
-
-    // Mobile nav
-    document.getElementById('mobileNavLinks').innerHTML =
-      '<a href="/?lang=' + lang + '#story" onclick="closeMobileMenu()" style="font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);text-decoration:none;display:block;margin-bottom:1rem">' + t.villa + '</a>' +
-      '<a href="/?lang=' + lang + '#rooms" onclick="closeMobileMenu()" style="font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);text-decoration:none;display:block;margin-bottom:1rem">' + t.rooms + '</a>' +
-      '<a href="/?lang=' + lang + '#experience" onclick="closeMobileMenu()" style="font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);text-decoration:none;display:block;margin-bottom:1rem">' + t.exp + '</a>' +
-      '<a href="/blog/?lang=' + lang + '" onclick="closeMobileMenu()" style="font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);text-decoration:none;display:block;margin-bottom:1rem">Blog</a>' +
-      '<a href="/?lang=' + lang + '#booking" onclick="closeMobileMenu()" style="font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);text-decoration:none;display:block;margin-bottom:1rem">' + t.book + '</a>';
-
-    document.getElementById('mobileLangSwitcher').innerHTML = langs.map(function(l) {
-      var cls = l[0] === lang ? 'lang-btn active' : 'lang-btn';
-      return '<a href="/blog/?lang=' + l[0] + '" class="' + cls + '">' + l[1] + '</a>';
-    }).join('');
-
-    // Footer
-    document.getElementById('footerVilla').textContent = t.villa;
-    document.getElementById('footerBook').textContent = t.reservation;
+    // Textes nav
+    var t = T[lang];
+    document.getElementById('nav-villa').textContent  = t.villa;
+    document.getElementById('nav-rooms').textContent  = t.rooms;
+    document.getElementById('nav-exp').textContent    = t.exp;
+    document.getElementById('nav-book').textContent   = t.book;
+    document.getElementById('mnav-villa').textContent = t.villa;
+    document.getElementById('mnav-rooms').textContent = t.rooms;
+    document.getElementById('mnav-exp').textContent   = t.exp;
+    document.getElementById('mnav-book').textContent  = t.book;
 
     document.documentElement.lang = lang;
   }
