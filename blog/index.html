@@ -139,8 +139,8 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="/#story" onclick="closeMobileMenu()" id="mnav-villa">La villa</a>
-  <a href="/#rooms" onclick="closeMobileMenu()" id="mnav-rooms">Chambres</a>
-  <a href="/#experience" onclick="closeMobileMenu()" id="mnav-exp">Expériences</a>
+  
+  
   <a href="/blog/" onclick="closeMobileMenu()">Blog</a>
   <a href="/#booking" onclick="closeMobileMenu()" id="mnav-book">Réserver</a>
   <div class="lang-switcher" style="margin-top:1rem">
@@ -427,12 +427,12 @@
     // Textes nav
     var t = T[lang];
     document.getElementById('nav-villa').textContent  = t.villa;
-    document.getElementById('nav-rooms').textContent  = t.rooms;
-    document.getElementById('nav-exp').textContent    = t.exp;
+    
+    
     document.getElementById('nav-book').textContent   = t.book;
     document.getElementById('mnav-villa').textContent = t.villa;
-    document.getElementById('mnav-rooms').textContent = t.rooms;
-    document.getElementById('mnav-exp').textContent   = t.exp;
+    
+    
     document.getElementById('mnav-book').textContent  = t.book;
 
     document.documentElement.lang = lang;
