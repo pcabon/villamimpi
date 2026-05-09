@@ -751,6 +751,7 @@
 
   // Language switcher - also update meta tags dynamically
   function setLang(lang) {
+    try { localStorage.setItem("vmLang", lang); } catch(e) {}
     document.body.className = 'lang-' + lang;
     document.documentElement.lang = lang;
     document.querySelectorAll('.lang-btn, .footer-lang-btn').forEach(btn => {
