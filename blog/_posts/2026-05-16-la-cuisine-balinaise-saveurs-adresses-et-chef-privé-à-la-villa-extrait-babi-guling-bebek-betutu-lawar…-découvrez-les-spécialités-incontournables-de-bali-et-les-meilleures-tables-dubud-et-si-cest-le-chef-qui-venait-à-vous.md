@@ -4,7 +4,7 @@ title: "Balinese cuisine: flavours, addresses & private chef at the villa
   specialties and the finest tables in Ubud. What if the chef came to you?"
 date: 2026-05-16T10:54:00.000+02:00
 lang: en
-category: Bali & Ubud
+category: Gastronomie
 description: >
   Discover Bali's culinary specialties: babi guling, bebek betutu, lawar. Best
   fine dining in Ubud and private chef experience at Villa Mimpi Ubud.
