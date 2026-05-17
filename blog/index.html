@@ -167,9 +167,7 @@
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">Villa <span>Mimpi</span> Ubud</a>
-  <ul class="nav-links" id="navLinks">
-    <!-- filled by JS -->
-  </ul>
+  <ul class="nav-links" id="navLinks"></ul>
   <div class="lang-switcher">
     <button class="lang-btn" onclick="setLang('fr')">FR</button>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -187,8 +185,6 @@
     <button class="lang-btn" onclick="setLang('zh');closeMobileMenu()">中文</button>
   </div>
 </div>
-
-<!-- PAGE CONTENT — one div per language -->
 
 <!-- ===== FRANÇAIS ===== -->
 <div id="page-fr">
@@ -208,24 +204,22 @@
     <button class="filter-btn" onclick="filterArticles('villa',this,'fr')">🏡 La Villa</button>
   </div>
   <div class="blog-grid">
-
-
     <article class="article-featured" data-cat="villa" onclick="openArticle('fr','floating-article')">
       <div class="article-img" style="background-image:url(https://raw.githubusercontent.com/pcabon/villamimpi/main/images/floating-breakfast.jpg);background-size:cover;background-position:center"></div>
       <div class="article-body">
         <span class="article-cat">La Villa &middot; Experience</span>
-        <h2 class="article-title">Floating breakfast Bali : tout ce qu il faut savoir</h2>
-        <p class="article-excerpt">Le floating breakfast est devenu l une des experiences les plus emblematiques de Bali. Decouvrez tout ce qu il faut savoir pour vivre ce moment magique a Villa Mimpi Ubud.</p>
-        <span class="read-more">Lire l article</span>
+        <h2 class="article-title">Floating breakfast Bali : tout ce qu'il faut savoir</h2>
+        <p class="article-excerpt">Le floating breakfast est devenu l'une des expériences les plus emblématiques de Bali. Découvrez tout ce qu'il faut savoir pour vivre ce moment magique à Villa Mimpi Ubud.</p>
+        <span class="read-more">Lire l'article</span>
       </div>
     </article>
     <article class="article-featured" data-cat="activities" onclick="openArticle('fr','ubud-3days')">
       <div class="article-img">&#127757;</div>
       <div class="article-body">
-        <span class="article-cat">Guide &middot; Activites</span>
-        <h2 class="article-title">Que faire a Ubud en 3 jours</h2>
-        <p class="article-excerpt">Rizi&egrave;res de Tegallalang, Temple de Tirta Empul, March&eacute; d Ubud, For&ecirc;t des Singes, danse Kecak : le programme ideal pour 3 jours inoubliables a Ubud.</p>
-        <span class="read-more">Lire l article</span>
+        <span class="article-cat">Guide &middot; Activités</span>
+        <h2 class="article-title">Que faire à Ubud en 3 jours</h2>
+        <p class="article-excerpt">Rizières de Tegallalang, Temple de Tirta Empul, Marché d'Ubud, Forêt des Singes, danse Kecak : le programme idéal pour 3 jours inoubliables à Ubud.</p>
+        <span class="read-more">Lire l'article</span>
       </div>
     </article>
     <article class="article-featured" data-cat="activities" onclick="openArticle('fr','ubud-activities')">
@@ -242,6 +236,13 @@
         <span class="sidebar-label">🏡 La Villa</span>
         <h3 class="sidebar-title">L'art du floating breakfast à Villa Mimpi</h3>
         <p class="sidebar-excerpt">Commencez votre journée dans la piscine à débordement avec un plateau de fruits tropicaux et de spécialités balinaises, face aux rizières d'Ubud.</p>
+        <span class="read-more">Lire →</span>
+      </div>
+      <!-- NOUVEL ARTICLE GASTRONOMIE FR -->
+      <div class="sidebar-card" data-cat="gastronomy" onclick="openArticle('fr','gastronomie-bali')">
+        <span class="sidebar-label">🍜 Gastronomie</span>
+        <h3 class="sidebar-title">La cuisine balinaise : saveurs, adresses et chef privé à la villa</h3>
+        <p class="sidebar-excerpt">Babi guling, bebek betutu, lawar… Découvrez les spécialités incontournables de Bali et les meilleures tables d'Ubud. Et si c'est le chef qui venait à vous ?</p>
         <span class="read-more">Lire →</span>
       </div>
       <div class="sidebar-card sidebar-cta">
@@ -272,8 +273,6 @@
     <button class="filter-btn" onclick="filterArticles('villa',this,'en')">🏡 The Villa</button>
   </div>
   <div class="blog-grid">
-
-
     <article class="article-featured" data-cat="villa" onclick="openArticle('en','floating-article')">
       <div class="article-img" style="background-image:url(https://raw.githubusercontent.com/pcabon/villamimpi/main/images/floating-breakfast.jpg);background-size:cover;background-position:center"></div>
       <div class="article-body">
@@ -308,6 +307,13 @@
         <p class="sidebar-excerpt">Start your day in the infinity pool with a tray of tropical fruits and Balinese specialties, overlooking the rice fields of Ubud.</p>
         <span class="read-more">Read →</span>
       </div>
+      <!-- NOUVEL ARTICLE GASTRONOMIE EN -->
+      <div class="sidebar-card" data-cat="gastronomy" onclick="openArticle('en','gastronomie-bali')">
+        <span class="sidebar-label">🍜 Gastronomy</span>
+        <h3 class="sidebar-title">Balinese cuisine: flavours, addresses & private chef at the villa</h3>
+        <p class="sidebar-excerpt">Babi guling, bebek betutu, lawar… Discover Bali's essential specialties and the finest tables in Ubud. What if the chef came to you?</p>
+        <span class="read-more">Read →</span>
+      </div>
       <div class="sidebar-card sidebar-cta">
         <span class="sidebar-label">Booking</span>
         <h3 class="sidebar-title">Live the Mimpi experience</h3>
@@ -336,24 +342,22 @@
     <button class="filter-btn" onclick="filterArticles('villa',this,'zh')">🏡 别墅</button>
   </div>
   <div class="blog-grid">
-
-
     <article class="article-featured" data-cat="villa" onclick="openArticle('zh','floating-article')">
       <div class="article-img" style="background-image:url(https://raw.githubusercontent.com/pcabon/villamimpi/main/images/floating-breakfast.jpg);background-size:cover;background-position:center"></div>
       <div class="article-body">
-        <span class="article-cat">&#21035;&#22885; &middot; &#20307;&#39564;</span>
-        <h2 class="article-title">&#24052;&#21033;&#23707;&#23707;&#28431;&#27973;&#26089;&#39511;&#65306;&#19968;&#20999;&#24517;&#30693;</h2>
-        <p class="article-excerpt">&#28431;&#27973;&#26089;&#39511;&#24050;&#25104;&#20026;&#24052;&#21033;&#23707;&#23707;&#26368;&#26631;&#24535;&#24615;&#30340;&#20307;&#39564;&#20043;&#19968;&#12290;&#26469;&#20理;&#35299; Villa Mimpi Ubud &#36825;&#27573;&#39764;&#24187;&#26102;&#20809;&#30340;&#19968;&#20999;&#12290;</p>
-        <span class="read-more">&#38405;&#35835;</span>
+        <span class="article-cat">别墅 &middot; 体验</span>
+        <h2 class="article-title">巴厘岛漂浮早餐：一切必知</h2>
+        <p class="article-excerpt">漂浮早餐已成为巴厘岛最具标志性的体验之一。来了解在 Villa Mimpi Ubud 体验这段魔幻时光的一切。</p>
+        <span class="read-more">阅读</span>
       </div>
     </article>
     <article class="article-featured" data-cat="activities" onclick="openArticle('zh','ubud-3days')">
       <div class="article-img">&#127757;</div>
       <div class="article-body">
-        <span class="article-cat">&#25391;&#23601; &middot; &#27963;&#21160;</span>
-        <h2 class="article-title">&#20113;&#24067;3&#26085;&#34892;&#31243;</h2>
-        <p class="article-excerpt">&#24503;&#26684;&#25289;&#26187;&#26426;&#30000;&#12289;&#34521;&#23572;&#20854;&#26031;&#21697;&#32005;&#23475;&#12289;&#20113;&#24067;&#24066;&#22580;&#12289;&#29548;&#23376;&#26519;&#12289;&#21345;&#24065;&#20811;&#33310;&#65306;&#20113;&#24067;3&#26085;&#23436;&#32654;&#34892;&#31243;&#12290;</p>
-        <span class="read-more">&#38405;&#35835;</span>
+        <span class="article-cat">攻略 &middot; 活动</span>
+        <h2 class="article-title">乌布3日行程</h2>
+        <p class="article-excerpt">德格拉朗梯田、蒂尔塔恩普尔圣泉寺、乌布市场、猴子森林、卡恰克舞蹈：乌布3日完美行程。</p>
+        <span class="read-more">阅读</span>
       </div>
     </article>
     <article class="article-featured" data-cat="activities" onclick="openArticle('zh','ubud-activities')">
@@ -370,6 +374,13 @@
         <span class="sidebar-label">🏡 别墅</span>
         <h3 class="sidebar-title">Villa Mimpi 的漂浮早餐艺术</h3>
         <p class="sidebar-excerpt">在无边泳池中开启新的一天，享用满满的热带水果和巴厘岛特色美食，面朝乌布梯田美景。</p>
+        <span class="read-more">阅读 →</span>
+      </div>
+      <!-- NOUVEL ARTICLE GASTRONOMIE ZH -->
+      <div class="sidebar-card" data-cat="gastronomy" onclick="openArticle('zh','gastronomie-bali')">
+        <span class="sidebar-label">🍜 美食</span>
+        <h3 class="sidebar-title">巴厘岛美食：特色料理、餐厅推荐与别墅私人厨师</h3>
+        <p class="sidebar-excerpt">烤乳猪、焖鸭、拉瓦尔……探索巴厘岛必尝美食与乌布顶级餐厅。或者，让大厨直接来到您的别墅？</p>
         <span class="read-more">阅读 →</span>
       </div>
       <div class="sidebar-card sidebar-cta">
@@ -401,11 +412,6 @@
       <p>Ubud est aussi un festival permanent des arts et de la gastronomie. Les marchés du matin regorgent de fruits exotiques, d'épices parfumées et d'artisanat local. Pour une expérience encore plus intime, laissez le <strong>chef privé de la Villa Mimpi</strong> vous préparer un dîner aux chandelles avec des produits du marché local.</p>
       <hr>
       <p>Ubud n'est pas une destination. C'est une transformation. Et la Villa Mimpi est l'écrin parfait pour la vivre pleinement.</p>
-      <div class="seo-box">
-        <h4>Meta description SEO</h4>
-        <p>Découvrez les meilleures activités à Ubud, Bali : rizières de Tegallalang, temples sacrés, gastronomie locale. Séjournez à Villa Mimpi Ubud pour une expérience inoubliable.</p>
-        <br><small><strong>Mots-clés :</strong> activités Ubud, que faire à Ubud, Tegallalang, temples Bali, villa de luxe Ubud</small>
-      </div>
     </div>
   </div>
 </div>
@@ -424,6 +430,57 @@
       <p>Notre floating breakfast comprend une sélection de <strong>fruits tropicaux</strong> de saison (mangue, papaye, dragon fruit, salak), des spécialités balinaises (nasi goreng, pisang goreng), une boisson chaude au choix et des fleurs fraîches. Il peut être personnalisé selon vos préférences alimentaires.</p>
       <hr>
       <p>Le floating breakfast à la Villa Mimpi Ubud, c'est plus qu'un petit-déjeuner. C'est le début d'une journée parfaite à Bali.</p>
+    </div>
+  </div>
+</div>
+
+<div class="article-full" id="art-fr-ubud-3days">
+  <div class="article-full-inner">
+    <button class="back-btn" onclick="closeArticle()">← Retour au blog</button>
+    <span class="full-label">Guide · 10 min de lecture</span>
+    <h1 class="full-title">Que faire à Ubud en 3 jours : l'itinéraire parfait</h1>
+    <div class="full-meta">Mai 2025 · Villa Mimpi Ubud</div>
+    <div class="full-content">
+      <p>Ubud est l'une des destinations les plus envoûtantes d'Asie. Entre rizières en escalier, temples anciens, jungle tropicale et gastronomie raffinée, cette ville d'art et de spiritualité au cœur de Bali mérite bien plus qu'une journée. Voici notre itinéraire idéal pour 3 jours inoubliables à Ubud, depuis la <strong>Villa Mimpi Ubud</strong>.</p>
+      <h2>Jour 1 : Nature et spiritualité</h2>
+      <p>Commencez par un <strong>floating breakfast</strong> dans la piscine à débordement de la Villa Mimpi. Direction les <strong>terrasses de Tegallalang</strong> inscrites à l'UNESCO, parmi les plus photographiées d'Asie. Arrivez tôt pour les découvrir dans la brume matinale. L'après-midi, visitez le <strong>Temple de Tirta Empul</strong>, lieu de purification rituelle balinaise.</p>
+      <h2>Jour 2 : Arts, culture et jungle</h2>
+      <p>Explorez le <strong>Marché d'Ubud</strong>, labyrinthe de couleurs et de parfums. L'après-midi, la <strong>Forêt des Singes de Sangeh</strong> où des centaines de macaques vivent en liberté. En soirée, le spectacle de <strong>danse Kecak</strong> au temple d'Uluwatu, un ballet de feu et de voix absolument envoûtant.</p>
+      <h2>Jour 3 : Randonnée et gastronomie</h2>
+      <p>À l'aube, la <strong>randonnée de la rivière Campuhan</strong>, 9km de collines verdoyantes et de rizières immaculées. Déjeuner gastronomique au <strong>Mozaic Restaurant</strong> ou au <strong>Locavore</strong>. Retour à la Villa Mimpi pour profiter une dernière fois de la piscine et du coucher de soleil.</p>
+      <h2>Conseils pratiques</h2>
+      <p><strong>Meilleure période :</strong> Avril-octobre · <strong>Transport :</strong> Scooter ou chauffeur privé depuis la villa · <strong>Budget :</strong> 50-100€/jour · <strong>Temples :</strong> Porter un sarong</p>
+      <hr>
+      <p>La <strong>Villa Mimpi Ubud</strong> est l'écrin idéal pour explorer Ubud à votre rythme. Notre équipe organise votre programme sur mesure.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GASTRONOMIE FR -->
+<div class="article-full" id="art-fr-gastronomie-bali">
+  <div class="article-full-inner">
+    <button class="back-btn" onclick="closeArticle()">← Retour au blog</button>
+    <span class="full-label">Gastronomie · 7 min de lecture</span>
+    <h1 class="full-title">La cuisine balinaise : saveurs sacrées, grandes tables et chef privé à la villa</h1>
+    <div class="full-meta">Juin 2025 · Villa Mimpi Ubud</div>
+    <div class="full-content">
+      <p>À Bali, manger n'est pas un simple acte de subsistance — c'est un rituel. Chaque plat raconte une histoire de croyances, de saisons et de générosité. La cuisine balinaise, souvent éclipsée par sa voisine javanaise ou la plus médiatisée cuisine thaïlandaise, est en réalité l'une des plus complexes et des plus parfumées d'Asie du Sud-Est. Voici un guide pour l'apprivoiser — des marchés du matin aux tables gastronomiques d'Ubud, jusqu'à votre propre cuisine à la <strong>Villa Mimpi</strong>.</p>
+      <h2>Les spécialités balinaises à ne pas manquer</h2>
+      <p>Le <strong>Babi Guling</strong> est sans doute le plat le plus emblématique de l'île. Ce cochon de lait rôti à la broche, enduit d'une pâte d'épices — curcuma, galanga, citronnelle, ail, piment — est une explosion de saveurs fumées et légèrement caramélisées. Il est traditionnellement préparé pour les cérémonies religieuses, mais plusieurs warungs le servent au quotidien. Goûtez-le au moins une fois.</p>
+      <p>Le <strong>Bebek Betutu</strong> est son pendant à la volaille : canard ou poulet entier, farci d'un mélange d'herbes et d'épices (<em>base genep</em>), enveloppé dans des feuilles de bananier et cuit lentement pendant des heures — parfois toute une nuit. La chair se détache à la fourchette ; les arômes, profonds et fumés, s'impriment dans la mémoire.</p>
+      <p>Le <strong>Lawar</strong> est une salade rituelle, mélange de légumes finement hachés, de noix de coco râpée, d'épices et parfois de viande ou de sang. Il en existe des dizaines de variantes selon les régions et les familles. Chaque bouchée est un voyage dans la cuisine de terroir balinaise.</p>
+      <p>Côté soupes, le <strong>Soto Ayam</strong> — bouillon de poulet aux aromates, servi avec des vermicelles de riz, du citron vert et des feuilles de kaffir — est le réconfort absolu après une matinée de randonnée dans les rizières. Et pour le snacking sucré, les <strong>Jaje Bali</strong>, petits gâteaux de riz colorés à la vapeur, méritent leur place dans tout itinéraire culinaire.</p>
+      <h2>Les meilleures tables gastronomiques d'Ubud</h2>
+      <p><strong>Locavore</strong> — souvent cité parmi les 50 meilleurs restaurants d'Asie — incarne la haute gastronomie balinaise dans sa forme la plus aboutie. Tout y est sourcé localement : légumes des jardins environnants, poissons des côtes de l'île, épices cultivées à quelques kilomètres. Le menu dégustation change chaque saison et surprend à chaque plat. Réservation indispensable plusieurs semaines à l'avance.</p>
+      <p><strong>Mozaic Restaurant Gastronomique</strong>, niché dans un jardin tropical romantique au cœur d'Ubud, propose une cuisine fusion franco-balinaise d'une élégance rare. Le chef y marie avec précision les techniques françaises classiques et les produits d'Indonésie. Un dîner aux chandelles ici est l'une des expériences les plus mémorables de l'île.</p>
+      <p><strong>Hujan Locale</strong> est la table préférée des connaisseurs en quête d'authenticité raffinée. Le chef Will Meyrick y propose une relecture créative des cuisines de l'archipel indonésien — de Sumatra à Papua — avec une terrasse ouverte sur la forêt et une carte des cocktails locaux impressionnante.</p>
+      <p><strong>Room4Dessert</strong>, signé par le chef Will Goldfarb (présenté dans le documentaire Chef's Table sur Netflix), est une expérience à part entière : un menu entièrement dédié aux desserts de haute cuisine, servi dans un cadre intime et poétique. Pour les épicuriens curieux.</p>
+      <h2>Le chef vient chez vous : cooking class et dîner à la villa</h2>
+      <p>La cuisine balinaise a beau être fascinante à découvrir en restaurant, rien n'égale l'intimité d'un repas préparé pour vous, dans le cadre d'exception de la <strong>Villa Mimpi Ubud</strong>. C'est précisément ce que notre chef privé vous propose.</p>
+      <p>Les <strong>cooking classes</strong> sont l'une des expériences les plus plébiscitées par nos hôtes. Accompagnés par notre chef, vous partez tôt le matin au marché local de Ubud pour choisir les produits du jour — légumes anciens, herbes fraîches, épices entières. De retour à la villa, vous préparez ensemble deux à trois plats emblématiques de la cuisine balinaise : fabrication de la pâte d'épices <em>base genep</em>, cuisson au wok, dressage soigné. L'atelier se termine par un déjeuner autour de la piscine, face aux rizières.</p>
+      <p>Pour les soirées plus festives ou les occasions spéciales, le <strong>dîner à la carte</strong> est une alternative luxueuse. Notre chef conçoit un menu sur mesure selon vos goûts et vos envies — entrées légères aux herbes locales, pièce de résistance balinaise, desserts aux fruits tropicaux — et s'occupe de tout, de la mise en place à la décoration de la table. Vous n'avez plus qu'à profiter de la nuit tiède et du concert des grenouilles dans les rizières.</p>
+      <hr>
+      <p>Que vous soyez à table dans l'un des grands restaurants d'Ubud ou installé au bord de votre piscine privée, la cuisine balinaise a le pouvoir de transformer un simple repas en souvenir impérissable. À la Villa Mimpi, nous veillons à ce que chaque bouchée soit à la hauteur du décor.</p>
     </div>
   </div>
 </div>
@@ -447,11 +504,6 @@
       <p>Ubud is also a permanent festival of arts and gastronomy. The morning markets overflow with exotic fruits, fragrant spices and local crafts. For an even more intimate experience, let <strong>Villa Mimpi's private chef</strong> prepare a candlelit dinner with local market produce.</p>
       <hr>
       <p>Ubud is not a destination. It is a transformation. And Villa Mimpi is the perfect setting to live it to the fullest.</p>
-      <div class="seo-box">
-        <h4>SEO Meta Description</h4>
-        <p>Discover the best activities in Ubud, Bali: Tegallalang rice terraces, sacred temples, local gastronomy. Stay at Villa Mimpi Ubud for an unforgettable experience.</p>
-        <br><small><strong>Keywords:</strong> Ubud activities, things to do in Ubud, Tegallalang, Bali temples, luxury villa Ubud</small>
-      </div>
     </div>
   </div>
 </div>
@@ -470,6 +522,57 @@
       <p>Our floating breakfast includes a selection of seasonal <strong>tropical fruits</strong> (mango, papaya, dragon fruit, salak), Balinese specialties (nasi goreng, pisang goreng), a hot drink of your choice and fresh flowers. It can be customized according to your dietary preferences.</p>
       <hr>
       <p>The floating breakfast at Villa Mimpi Ubud is more than a breakfast. It is the beginning of a perfect day in Bali.</p>
+    </div>
+  </div>
+</div>
+
+<div class="article-full" id="art-en-ubud-3days">
+  <div class="article-full-inner">
+    <button class="back-btn" onclick="closeArticle()">← Back to blog</button>
+    <span class="full-label">Guide · 10 min read</span>
+    <h1 class="full-title">What to do in Ubud in 3 days: the perfect itinerary</h1>
+    <div class="full-meta">May 2025 · Villa Mimpi Ubud</div>
+    <div class="full-content">
+      <p>Ubud is one of the most enchanting destinations in Asia. Between stepped rice terraces, ancient temples, tropical jungle and refined gastronomy, this city of art and spirituality in the heart of Bali deserves much more than a day. Here is our ideal itinerary for 3 unforgettable days in Ubud, based at <strong>Villa Mimpi Ubud</strong>.</p>
+      <h2>Day 1: Nature and spirituality</h2>
+      <p>Begin with a <strong>floating breakfast</strong> in Villa Mimpi's infinity pool. Head to the UNESCO-listed <strong>Tegallalang terraces</strong>, among the most photographed in Asia. Arrive early to catch them in the morning mist. In the afternoon, visit the <strong>Tirta Empul Temple</strong>, a ritual purification site.</p>
+      <h2>Day 2: Arts, culture and jungle</h2>
+      <p>Explore <strong>Ubud Market</strong>, a labyrinth of colors and fragrances. In the afternoon, the <strong>Sangeh Monkey Forest</strong> where hundreds of macaques roam freely. In the evening, the <strong>Kecak dance</strong> at Uluwatu Temple, an utterly captivating fire and voice ballet.</p>
+      <h2>Day 3: Hiking and gastronomy</h2>
+      <p>At dawn, the <strong>Campuhan Ridge Walk</strong>, 9km of verdant hills and pristine rice fields. Gastronomic lunch at <strong>Mozaic Restaurant</strong> or <strong>Locavore</strong>. Return to Villa Mimpi for one last swim and the sunset.</p>
+      <h2>Practical tips</h2>
+      <p><strong>Best season:</strong> April-October · <strong>Transport:</strong> Scooter or private driver from the villa · <strong>Budget:</strong> 50-100€/day · <strong>Temples:</strong> Wear a sarong</p>
+      <hr>
+      <p><strong>Villa Mimpi Ubud</strong> is the ideal base to explore Ubud at your own pace. Our team organises your tailor-made programme.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GASTRONOMIE EN -->
+<div class="article-full" id="art-en-gastronomie-bali">
+  <div class="article-full-inner">
+    <button class="back-btn" onclick="closeArticle()">← Back to blog</button>
+    <span class="full-label">Gastronomy · 7 min read</span>
+    <h1 class="full-title">Balinese cuisine: sacred flavours, fine dining & private chef at the villa</h1>
+    <div class="full-meta">June 2025 · Villa Mimpi Ubud</div>
+    <div class="full-content">
+      <p>In Bali, eating is not a simple act of sustenance — it is a ritual. Every dish tells a story of beliefs, seasons and generosity. Balinese cuisine, often overshadowed by its Javanese neighbour or the more widely known Thai food, is in fact one of the most complex and fragrant in Southeast Asia. Here is a guide to discovering it — from morning markets to Ubud's gastronomic tables, all the way to your own kitchen at <strong>Villa Mimpi</strong>.</p>
+      <h2>Balinese specialties you must try</h2>
+      <p><strong>Babi Guling</strong> is arguably the island's most iconic dish. This spit-roasted suckling pig, coated in a spice paste — turmeric, galangal, lemongrass, garlic, chilli — is an explosion of smoky, slightly caramelised flavours. Traditionally prepared for religious ceremonies, several warungs now serve it daily. Taste it at least once.</p>
+      <p><strong>Bebek Betutu</strong> is its poultry counterpart: whole duck or chicken, stuffed with a blend of herbs and spices (<em>base genep</em>), wrapped in banana leaves and slow-cooked for hours — sometimes overnight. The meat falls off the bone; the deep, smoky aromas are unforgettable.</p>
+      <p><strong>Lawar</strong> is a ritual salad: finely chopped vegetables, grated coconut, spices and sometimes meat or blood. Dozens of variations exist by region and family. Each bite is a journey into Balinese terroir cooking.</p>
+      <p>On the soup front, <strong>Soto Ayam</strong> — chicken broth with aromatics, served with rice vermicelli, lime and kaffir lime leaves — is the perfect comfort food after a morning trek through the rice fields. And for sweet snacking, <strong>Jaje Bali</strong>, colourful steamed rice cakes, deserve a place in every culinary itinerary.</p>
+      <h2>The finest gastronomic tables in Ubud</h2>
+      <p><strong>Locavore</strong> — often ranked among Asia's 50 best restaurants — embodies Balinese haute cuisine at its finest. Everything is sourced locally: vegetables from surrounding gardens, fish from the island's shores, spices grown a few kilometres away. The tasting menu changes with the seasons and surprises at every course. Book several weeks in advance.</p>
+      <p><strong>Mozaic Restaurant Gastronomique</strong>, tucked in a romantic tropical garden in the heart of Ubud, offers a Franco-Balinese fusion cuisine of rare elegance. The chef combines classic French techniques with Indonesian produce with remarkable precision. A candlelit dinner here is one of the island's most memorable experiences.</p>
+      <p><strong>Hujan Locale</strong> is the favourite table of connoisseurs seeking refined authenticity. Chef Will Meyrick offers a creative reinterpretation of Indonesian archipelago cuisine — from Sumatra to Papua — with an open terrace overlooking the forest and an impressive list of local cocktails.</p>
+      <p><strong>Room4Dessert</strong>, by chef Will Goldfarb (featured in Netflix's Chef's Table documentary), is an experience unto itself: a menu entirely dedicated to haute cuisine desserts, served in an intimate, poetic setting. Essential for curious epicureans.</p>
+      <h2>The chef comes to you: cooking class & dinner at the villa</h2>
+      <p>As fascinating as Balinese cuisine is to discover in restaurants, nothing compares to the intimacy of a meal prepared for you, in the exceptional setting of <strong>Villa Mimpi Ubud</strong>. This is exactly what our private chef offers.</p>
+      <p><strong>Cooking classes</strong> are one of the most beloved experiences among our guests. Guided by our chef, you head out early to the local Ubud market to choose the day's produce — heirloom vegetables, fresh herbs, whole spices. Back at the villa, you prepare two to three emblematic Balinese dishes together: crafting the <em>base genep</em> spice paste, wok cooking, careful plating. The session ends with a poolside lunch overlooking the rice fields.</p>
+      <p>For more festive evenings or special occasions, the <strong>à la carte dinner</strong> is a luxurious alternative. Our chef designs a bespoke menu around your tastes and desires — light starters with local herbs, a Balinese main course, tropical fruit desserts — and takes care of everything, from table setting to decoration. All you need to do is enjoy the warm evening and the chorus of frogs in the rice fields.</p>
+      <hr>
+      <p>Whether you are seated at one of Ubud's great restaurants or settled by your private pool, Balinese cuisine has the power to turn a simple meal into an enduring memory. At Villa Mimpi, we ensure every bite is worthy of the setting.</p>
     </div>
   </div>
 </div>
@@ -493,11 +596,6 @@
       <p>乌布同时也是一座艺术与美食的永恒节日。早市上摆满了异国水果、芬芳香料和本地手工艺品。若想体验更为私密的浪漫，可请 <strong>Villa Mimpi 的私人厨师</strong>以当地市场的新鲜食材为您准备一顿烛光晚餐。</p>
       <hr>
       <p>乌布不是一个目的地，而是一次蜕变。而 Villa Mimpi，正是您完全融入这份蜕变的最佳舞台。</p>
-      <div class="seo-box">
-        <h4>SEO 元描述</h4>
-        <p>探索乌布，巴厘岛的最佳活动：德格拉朗梯田、神圣寺庙、当地美食。入住 Villa Mimpi Ubud，开启难忘之旅。</p>
-        <br><small><strong>关键词：</strong> 乌布活动，乌布旅游攻略，德格拉朗，巴厘岛寺庙，乌布豪华别墅</small>
-      </div>
     </div>
   </div>
 </div>
@@ -520,290 +618,94 @@
   </div>
 </div>
 
-<!-- FOOTER -->
-<div class="article-full" id="art-fr-ubud-3days">
-  <div class="article-full-inner">
-    <button class="back-btn" onclick="closeArticle()">&larr; Retour au blog</button>
-    <span class="full-label">Guide &middot; 10 min de lecture</span>
-    <h1 class="full-title">Que faire &agrave; Ubud en 3 jours : l'itin&eacute;raire parfait</h1>
-    <div class="full-meta">Mai 2025 &middot; Villa Mimpi Ubud</div>
-    <div class="full-content">
-      <p>Ubud est l'une des destinations les plus envo&ucirc;tantes d'Asie. Entre rizières en escalier, temples anciens, jungle tropicale et gastronomie raffin&eacute;e, cette ville d'art et de spiritualit&eacute; au c&oelig;ur de Bali m&eacute;rite bien plus qu'une journ&eacute;e. Voici notre itin&eacute;raire id&eacute;al pour 3 jours inoubliables &agrave; Ubud, depuis la <strong>Villa Mimpi Ubud</strong>.</p>
-
-      <h2>Jour 1 : S'immerger dans la nature et la spiritualit&eacute;</h2>
-      <p>Commencez votre premi&egrave;re matin&eacute;e par un <strong>floating breakfast</strong> dans la piscine &agrave; d&eacute;bordement de la Villa Mimpi Ubud. Face aux rizi&egrave;res qui s'&eacute;veillent dans la lumi&egrave;re dor&eacute;e du matin, c'est la promesse d'une journ&eacute;e parfaite.</p>
-      <p>Direction les <strong>terrasses de Tegallalang</strong>, &agrave; quelques minutes de la villa. Ces rizi&egrave;res en escalier inscrites &agrave; l'UNESCO sont parmi les plus photographi&eacute;es d'Asie. Arrivez t&ocirc;t pour les d&eacute;couvrir dans la brume matinale, avant les premiers touristes.</p>
-      <p>L'apr&egrave;s-midi, visitez le <strong>Temple de Tirta Empul</strong>, lieu de purification rituelle o&ugrave; les balinais se baignent dans des sources sacr&eacute;es. Un moment profond&eacute;ment &eacute;mouvant. Terminez la journ&eacute;e par un cours de cuisine balinaise ou un massage traditionnel.</p>
-
-      <h2>Jour 2 : Arts, culture et jungle</h2>
-      <p>La matin&eacute;e est consacr&eacute;e au <strong>March&eacute; d'Ubud</strong>, un labyrinthe de couleurs et de parfums o&ugrave; artisans et producteurs locaux proposent batiks, sculptures, &eacute;pices et fruits exotiques. N&eacute;gociez, go&ucirc;tez, d&eacute;couvrez.</p>
-      <p>Apr&egrave;s le d&eacute;jeuner dans un warung local, explorez la <strong>For&ecirc;t des Singes de Sangeh</strong> &mdash; un sanctuaire naturel o&ugrave; des centaines de macaques vivent en libert&eacute; parmi des arbres sacr&eacute;s centenaires.</p>
-      <p>En fin d'apr&egrave;s-midi, assistez au coucher de soleil depuis le <strong>Temple de Pura Luhur Batukaru</strong> ou r&eacute;servez vos places pour un spectacle de <strong>danse Kecak</strong> au Temple de Uluwatu. Ce ballet de feu et de voix est l'un des spectacles les plus envoutants de Bali.</p>
-
-      <h2>Jour 3 : Randonn&eacute;e, rizi&egrave;res et gastronomie</h2>
-      <p>Pour votre derni&egrave;re matin&eacute;e, r&eacute;veillez-vous &agrave; l'aube pour la <strong>randonn&eacute;e de la rivi&egrave;re Campuhan</strong>, un sentier de 9km qui serpente &agrave; travers collines verdoyantes et rizi&egrave;res immacul&eacute;es. Le silence, les oiseaux, la beaut&eacute; sauvage de Bali &agrave; l'&eacute;tat pur.</p>
-      <p>Terminez votre s&eacute;jour par un d&eacute;jeuner gastronomique au <strong>Mozaic Restaurant</strong>, une institution culinaire d'Ubud, ou au <strong>Locavore</strong> pour une cuisine de terroir r&eacute;invent&eacute;e avec talent.</p>
-      <p>De retour &agrave; la Villa Mimpi, profitez une derni&egrave;re fois de la piscine &agrave; d&eacute;bordement et du coucher de soleil sur les rizi&egrave;res.</p>
-
-      <h2>Conseils pratiques</h2>
-      <p><strong>Meilleure p&eacute;riode :</strong> Avril &agrave; octobre (saison s&egrave;che).<br>
-      <strong>Transport :</strong> Louez un scooter ou un chauffeur priv&eacute; depuis la villa.<br>
-      <strong>Budget :</strong> Pr&eacute;voyez 50-100&euro; par jour pour les activit&eacute;s et repas.<br>
-      <strong>Respect local :</strong> Portez un sarong pour visiter les temples.</p>
-      <hr>
-      <p>Bas&eacute;e &agrave; quelques minutes de tous ces tr&eacute;sors, la <strong>Villa Mimpi Ubud</strong> est l'&eacute;crin id&eacute;al pour explorer Ubud &agrave; votre rythme.</p>
-    </div>
-  </div>
-</div>
-
-<div class="article-full" id="art-en-ubud-3days">
-  <div class="article-full-inner">
-    <button class="back-btn" onclick="closeArticle()">&larr; Back to blog</button>
-    <span class="full-label">Guide &middot; 10 min read</span>
-    <h1 class="full-title">What to do in Ubud in 3 days: the perfect itinerary</h1>
-    <div class="full-meta">May 2025 &middot; Villa Mimpi Ubud</div>
-    <div class="full-content">
-      <p>Ubud is one of the most enchanting destinations in Asia. Between stepped rice terraces, ancient temples, tropical jungle and refined gastronomy, this city of art and spirituality in the heart of Bali deserves much more than a day trip. Here is our ideal itinerary for 3 unforgettable days in Ubud, based at <strong>Villa Mimpi Ubud</strong>.</p>
-
-      <h2>Day 1: Immersing yourself in nature and spirituality</h2>
-      <p>Begin your first morning with a <strong>floating breakfast</strong> in Villa Mimpi Ubud&rsquo;s infinity pool. Facing the rice fields awakening in the golden morning light, it&rsquo;s the promise of a perfect day.</p>
-      <p>Head to the <strong>Tegallalang terraces</strong>, just minutes from the villa. These UNESCO-listed stepped rice paddies are among the most photographed in Asia. Arrive early to discover them in the morning mist, before the first tourists arrive.</p>
-      <p>In the afternoon, visit the <strong>Tirta Empul Temple</strong>, a ritual purification site where Balinese bathe in sacred springs. A deeply moving moment. End the day with a Balinese cooking class or traditional massage.</p>
-
-      <h2>Day 2: Arts, culture and jungle</h2>
-      <p>The morning is devoted to <strong>Ubud Market</strong>, a labyrinth of colors and fragrances where local artisans and producers offer batiks, sculptures, spices and exotic fruits. Bargain, taste, discover.</p>
-      <p>After lunch at a local warung, explore the <strong>Sangeh Monkey Forest</strong> &mdash; a natural sanctuary where hundreds of macaques live freely among century-old sacred trees.</p>
-      <p>In the late afternoon, watch the sunset from <strong>Pura Luhur Batukaru Temple</strong> or book seats for a <strong>Kecak dance</strong> performance at Uluwatu Temple. This fire and voice ballet is one of Bali&rsquo;s most enchanting spectacles.</p>
-
-      <h2>Day 3: Hiking, rice fields and gastronomy</h2>
-      <p>For your last morning, wake up at dawn for the <strong>Campuhan Ridge Walk</strong>, a 9km trail winding through verdant hills and pristine rice fields. Silence, birdsong, Bali&rsquo;s wild beauty in its purest form.</p>
-      <p>End your stay with a gastronomic lunch at <strong>Mozaic Restaurant</strong>, one of Ubud&rsquo;s culinary institutions, or at <strong>Locavore</strong> for a brilliantly reinvented local cuisine.</p>
-      <p>Back at Villa Mimpi, enjoy one last dip in the infinity pool and watch the sunset over the rice fields.</p>
-
-      <h2>Practical tips</h2>
-      <p><strong>Best season:</strong> April to October (dry season).<br>
-      <strong>Transport:</strong> Rent a scooter or private driver from the villa.<br>
-      <strong>Budget:</strong> Allow 50-100&euro; per day for activities and meals.<br>
-      <strong>Local respect:</strong> Wear a sarong to visit temples.</p>
-      <hr>
-      <p>Located just minutes from all these treasures, <strong>Villa Mimpi Ubud</strong> is the ideal base to explore Ubud at your own pace.</p>
-    </div>
-  </div>
-</div>
-
 <div class="article-full" id="art-zh-ubud-3days">
   <div class="article-full-inner">
-    <button class="back-btn" onclick="closeArticle()">&larr; &#36820;&#22238;&#21338;&#23458;</button>
-    <span class="full-label">&#25391;&#23601;&#25391;&#23601; &middot; &#38405;&#35835;10&#20998;&#38047;</span>
-    <h1 class="full-title">&#20113;&#24067;3&#26085;&#34892;&#31243;&#25391;&#23601;&#25391;&#23601;&#65306;&#23436;&#32654;&#34892;&#31243;&#25391;&#23601;</h1>
-    <div class="full-meta">2025&#24180;5&#26376; &middot; Villa Mimpi Ubud</div>
+    <button class="back-btn" onclick="closeArticle()">← 返回博客</button>
+    <span class="full-label">攻略 · 阅读10分钟</span>
+    <h1 class="full-title">乌布3日行程：完美攻略</h1>
+    <div class="full-meta">2025年5月 · Villa Mimpi Ubud</div>
     <div class="full-content">
-      <p>&#20113;&#24067;&#26159;&#20122;&#27954;&#26368;&#20351;&#20154;&#30528;&#36948;&#30340;&#30446;&#30340;&#22320;&#20043;&#19968;&#12290;&#22312;&#23637;&#24335;&#31275;&#30000;&#12289;&#21476;&#32493;&#31070;&#24202;&#12289;&#28909;&#24481;&#19995;&#26519;&#21644;&#31934;&#33268;&#32654;&#39069;&#20043;&#38388;&#65292;&#36825;&#24231;&#20844;&#20813;&#23481;&#19981;&#24471;&#21482;&#24310;&#20303;&#19968;&#22825;&#12290;&#36825;&#37324;&#26159;&#25105;&#20204;&#24314;&#35758;&#30340;&#20197; <strong>Villa Mimpi Ubud</strong> &#20026;&#22522;&#22320;&#30340;&#20113;&#24067;3&#26085;&#23436;&#32654;&#34892;&#31243;&#12290;</p>
-
-      <h2>&#31532;&#19968;&#22825;&#65306;&#27784;&#36827;&#33258;&#28982;&#19982;&#28789;&#24615;&#19990;&#30028;</h2>
-      <p>&#22312; Villa Mimpi Ubud &#26080;&#36793;&#27954;&#27744;&#20013;&#20840;&#29616;&#24320;&#22561;&#65292;&#20241;&#39318;&#31532;&#19968;&#20491;&#28165;&#26053;&#12290;&#38754;&#26397;&#22312;&#37329;&#33394;&#26202;&#20809;&#20013;&#33550;&#32780;&#30340;&#31275;&#30000;&#65292;&#24212;&#35831;&#32508;&#32993;&#30340;&#19968;&#22825;&#30340;&#24320;&#22561;&#12290;</p>
-      <p>&#21069;&#24448;&#36317;&#21035;&#22885;&#20165;&#20960;&#20998;&#38047;&#36335;&#31243;&#30340;<strong>&#24503;&#26684;&#25289;&#26187;&#26426;&#30000;</strong>&#12290;&#36825;&#20123;&#32852;&#21512;&#22269;&#25945;&#31185;&#25991;&#32452;&#35748;&#23450;&#30340;&#23618;&#21491;&#31275;&#30000;&#26159;&#20124;&#27954;&#26368;&#21463;&#25444;&#24433;&#29233;&#22909;&#32773;&#38青&#30716;&#30340;&#22320;&#26041;&#20043;&#19968;&#12290;&#26227;&#26227;&#25277;&#36798;&#65292;&#22312;&#28216;&#23458;&#28431;&#24481;&#20043;&#21069;&#20110;&#26202;&#38695;&#20013;&#29616;&#23487;&#36825;&#20221;&#23425;&#38745;&#12290;</p>
-      <p>&#19979;&#21320;&#21069;&#24448;&#21442;&#35266;<strong>&#34521;&#23572;&#20854;&#26031;&#21697;&#32005;&#23475;</strong>&#65292;&#24052;&#21033;&#23707;&#23707;&#20154;&#22312;&#27492;&#36827;&#34892;&#20928;&#21270;&#20284;&#24335;&#12290;&#20197;&#19968;&#22823;&#24481;&#26469;&#12289;&#24481;&#32043;&#25391;&#23601;&#25391;&#23601;&#35838;&#25110;&#20256;&#32479;&#25353;&#25187;&#20026;&#36825;&#19968;&#22825;&#30011;&#19978;&#21477;&#30707;&#12290;</p>
-
-      <h2>&#31532;&#20108;&#22825;&#65306;&#33402;&#26415;&#12289;&#25991;&#21270;&#19982;&#20381;&#26519;</h2>
-      <p>&#19978;&#21320;&#21069;&#24448;<strong>&#20113;&#24067;&#24066;&#22580;</strong>&#65292;&#36825;&#26159;&#19968;&#20491;&#33394;&#24425;&#19982;&#20225;&#39049;&#20132;&#32508;&#30340;&#36814;&#23467;&#65292;&#24403;&#22320;&#24037;&#21327;&#21644;&#29983;&#20135;&#32773;&#22312;&#27492;&#20986;&#21806;&#34157;&#26009;&#12289;&#38498;&#20851;&#12289;&#39321;&#26009;&#21644;&#24322;&#22269;&#27700;&#26524;&#12290;</p>
-      <p>&#22312;&#24403;&#22320;&#23567;&#39292;&#39292;&#29992;&#23436;&#21320;&#39277;&#65292;&#25216;&#24418;&#25490;&#23637;<strong>&#26449;&#26684;&#29286;&#23376;&#26519;</strong>&#8212;&#19968;&#20491;&#25968;&#30334;&#21482;&#31478;&#29503;&#22312;&#30334;&#24180;&#31070;&#26641;&#20043;&#38388;&#33258;&#30001;&#26627;&#24687;&#30340;&#22825;&#28982;&#20445;&#25252;&#21306;&#12290;</p>
-      <p>&#20傍&#26202;&#65292;&#22312;<strong>&#26666;&#25289;&#36958;&#29305;&#31070;&#24202;</strong>&#27440;&#26227;&#35266;&#26085;&#65292;&#25110;&#39044;&#35746;&#21704;&#27874;&#31070;&#24202;&#30340;<strong>&#21345;&#24065;&#20811;&#33310;</strong>&#34920;&#28982;&#12290;&#36825;&#22330;&#28779;&#30830;&#19982;&#20154;&#22768;&#20132;&#32455;&#30340;&#33021;&#27979;&#26159;&#24052;&#21033;&#23707;&#23707;&#26368;&#20351;&#20154;&#30528;&#36948;&#30340;&#34920;&#28982;&#20043;&#19968;&#12290;</p>
-
-      <h2>&#31532;&#19977;&#22825;&#65306;&#24444;&#27493;&#12289;&#31275;&#30000;&#19982;&#32654;&#39069;</h2>
-      <p>&#26368;&#21518;&#19968;&#20491;&#28165;&#26053;&#65292;&#22312;&#40481;&#26230;&#26102;&#20998;&#20986;&#21457;&#65292;&#36229;&#19978;<strong>&#22574;&#26222;&#27721;&#23665;&#33401;&#27493;&#36947;</strong>&#65292;&#36825;&#26465;9&#20844;&#37324;&#30340;&#23567;&#24452;&#34876;&#24687;&#31283;&#20105;&#25391;&#23601;&#25391;&#23601;&#30340;&#32469;&#32447;&#30740;&#32469;&#12290;</p>
-      <p>&#20197;<strong>Mozaic&#39292;&#21385;</strong>&#30340;&#19968;&#39039;&#31934;&#33268;&#21320;&#39277;&#20026;&#26097;&#31243;&#30011;&#19978;&#21477;&#30707;&#65292;&#25110;&#36873;&#25321;<strong>Locavore</strong>&#20307;&#39564;&#20197;&#26412;&#22320;&#39043;&#26448;&#31934;&#24515;&#34903;&#23454;&#30340;&#22320;&#26041;&#39046;&#26550;&#12290;</p>
-      <p>&#22238;&#21040; Villa Mimpi&#65292;&#20877;&#27425;&#20241;&#23433;&#26080;&#36793;&#27954;&#27744;&#65292;&#38753;&#35266;&#31275;&#30000;&#19978;&#30340;&#22885;&#38752;&#20馀;&#26657;&#8212;&#36825;&#24133;&#30011;&#38754;&#23558;&#27704;&#36828;&#37325;&#21051;&#22312;&#24744;&#30340;&#35760;&#24202;&#20043;&#20013;&#12290;</p>
-
-      <h2>&#23454;&#29992;&#24314;&#35758;</h2>
-      <p><strong>&#26368;&#20339;&#26102;&#38388;&#65306;</strong>4&#26376;&#33267;10&#26376;&#65288;&#26053;&#23395;&#65289;&#12290;<br>
-      <strong>&#20132;&#36890;&#65306;</strong>&#20174;&#21035;&#22885;&#31199;&#29992;&#25391;&#23601;&#25391;&#23601;&#36828;&#25392;&#24212;&#35831;&#30593;&#25209;&#31169;&#20154;&#21496;&#26C9;&#12290;<br>
-      <strong>&#39044;&#31639;&#65306;</strong>&#27963;&#21160;&#12289;&#39292;&#39277;&#21450;&#31070;&#24202;&#38376;&#31080;&#27ỗ&#22825;&#32622;&#31639;50-100&#27431;&#20803;&#12290;<br>
-      <strong>&#31036;&#20仪&#65306;</strong>&#21442;&#35266;&#31070;&#24202;&#39035;&#31354;&#32435;&#8212;&#20837;&#21475;&#22788;&#25110;&#21035;&#22885;&#22343;&#21487;&#25552;&#20379;&#12290;</p>
+      <p>乌布是亚洲最使人着迷的目的地之一。在展式稻田、古寺神庙、热带丛林和精致美食之间，这座巴厘岛中心的艺术与精神之城值得您只假运掉不止一天。我们为您推荐以 <strong>Villa Mimpi Ubud</strong> 为基地的乌布3日完美行程。</p>
+      <h2>第一天：自然与神性</h2>
+      <p>在 Villa Mimpi 无边泳池中享用<strong>漂浮早餐</strong>。前往联合国教科文组织认定的<strong>德格拉朗梯田</strong>，进出有时间早早抵达以避开游客。下午前往<strong>蒂尔塔恩普尔圣泉寺</strong>体验巴厘岛传统净化仪式。</p>
+      <h2>第二天：艺术、文化与依森</h2>
+      <p>游览<strong>乌布市场</strong>，出售就采、馆关、香料和异国水果。下午前往<strong>来格猴子森林</strong>游览自由栖息的栖息。晚上还有<strong>卡恰克舞蹈</strong>表演。</p>
+      <h2>第三天：徒步与美食</h2>
+      <p>黎明出发，超上<strong>坎普汉山脊步道</strong>，观赏<strong>Mozaic</strong> 或 <strong>Locavore</strong> 的精致午餐。回到 Villa Mimpi 再次休安无边泳池。</p>
+      <h2>实用建议</h2>
+      <p><strong>最佳时间：</strong>4-10月 · <strong>交通：</strong>租用游览远逝应请备私人司机 · <strong>预算：</strong>每天50-100欧元</p>
       <hr>
-      <p>&#36317;&#25152;&#26377;&#36825;&#20123;&#29483;&#23453;&#20165;&#25968;&#20998;&#38047;&#36335;&#31243;&#65292;<strong>Villa Mimpi Ubud</strong>&#26159;&#25353;&#33258;&#24049;&#33410;&#22949;&#25216;&#24418;&#20113;&#24067;&#30340;&#29702;&#24819;&#22522;&#22320;&#12290;&#25105;&#20204;&#30340;&#22242;&#38431;&#23558;&#31105;&#31诚;&#20026;&#24744;&#37327;&#36523;&#23450;&#21046;&#19987;&#23646;&#34892;&#31243;&#12290;</p>
+      <p><strong>Villa Mimpi Ubud</strong>是按自己节奏游览乌布的理想基地。</p>
     </div>
   </div>
 </div>
 
-<div class="article-full" id="art-fr-ubud-3days">
+<!-- GASTRONOMIE ZH -->
+<div class="article-full" id="art-zh-gastronomie-bali">
   <div class="article-full-inner">
-    <button class="back-btn" onclick="closeArticle()">&larr; Retour au blog</button>
-    <span class="full-label">Guide &middot; 10 min de lecture</span>
-    <h1 class="full-title">Que faire &agrave; Ubud en 3 jours : l'itin&eacute;raire parfait</h1>
-    <div class="full-meta">Mai 2025 &middot; Villa Mimpi Ubud</div>
+    <button class="back-btn" onclick="closeArticle()">← 返回博客</button>
+    <span class="full-label">美食 · 阅读7分钟</span>
+    <h1 class="full-title">巴厘岛美食：神圣风味、顶级餐厅与别墅私人厨师</h1>
+    <div class="full-meta">2025年6月 · Villa Mimpi Ubud</div>
     <div class="full-content">
-      <p>Ubud est l'une des destinations les plus envoutantes d'Asie. Entre rizi&egrave;res en escalier, temples anciens, jungle tropicale et gastronomie raffin&eacute;e, cette ville d'art et de spiritualit&eacute; au c&oelig;ur de Bali m&eacute;rite bien plus qu'une journ&eacute;e. Voici notre itin&eacute;raire id&eacute;al pour 3 jours inoubliables &agrave; Ubud, depuis la <strong>Villa Mimpi Ubud</strong>.</p>
-      <h2>Jour 1 : Nature et spiritualit&eacute;</h2>
-      <p>Commencez par un <strong>floating breakfast</strong> dans la piscine &agrave; d&eacute;bordement de la Villa Mimpi. Direction les <strong>terrasses de Tegallalang</strong> inscrites &agrave; l'UNESCO, parmi les plus photographi&eacute;es d'Asie. Arrivez t&ocirc;t pour les d&eacute;couvrir dans la brume matinale. L'apr&egrave;s-midi, visitez le <strong>Temple de Tirta Empul</strong>, lieu de purification rituelle balinaise.</p>
-      <h2>Jour 2 : Arts, culture et jungle</h2>
-      <p>Explorez le <strong>March&eacute; d'Ubud</strong>, labyrinthe de couleurs et de parfums. L'apr&egrave;s-midi, la <strong>For&ecirc;t des Singes de Sangeh</strong> o&ugrave; des centaines de macaques vivent en libert&eacute;. En soir&eacute;e, le spectacle de <strong>danse Kecak</strong> au temple d'Uluwatu, un ballet de feu et de voix absolument envoutant.</p>
-      <h2>Jour 3 : Randonn&eacute;e et gastronomie</h2>
-      <p>&Agrave; l'aube, la <strong>randonn&eacute;e de la rivi&egrave;re Campuhan</strong>, 9km de collines verdoyantes et de rizi&egrave;res immacul&eacute;es. D&eacute;jeuner gastronomique au <strong>Mozaic Restaurant</strong> ou au <strong>Locavore</strong>. Retour &agrave; la Villa Mimpi pour profiter une derni&egrave;re fois de la piscine et du coucher de soleil.</p>
-      <h2>Conseils pratiques</h2>
-      <p><strong>Meilleure p&eacute;riode :</strong> Avril-octobre &middot; <strong>Transport :</strong> Scooter ou chauffeur priv&eacute; depuis la villa &middot; <strong>Budget :</strong> 50-100&euro;/jour &middot; <strong>Temples :</strong> Porter un sarong</p>
-      <hr><p>La <strong>Villa Mimpi Ubud</strong> est l'&eacute;crin id&eacute;al pour explorer Ubud &agrave; votre rythme. Notre &eacute;quipe organise votre programme sur mesure.</p>
+      <p>在巴厘岛，进食不仅仅是一种日常行为，更是一种仪式。每道菜肴都承载着信仰、季节与慷慨的故事。巴厘岛料理常被爪哇菜或泰国菜的光芒所掩盖，但实际上，它是东南亚最为复杂、最为芬芳的美食之一。这里为您呈现一份完整指南——从清晨市集到乌布顶级餐厅，再到您在 <strong>Villa Mimpi</strong> 的私人厨房。</p>
+      <h2>不可错过的巴厘岛特色料理</h2>
+      <p><strong>烤乳猪（Babi Guling）</strong>无疑是岛上最具代表性的菜肴。整只小猪在炭火上缓缓转动，裹覆着一层由姜黄、良姜、柠檬草、大蒜和辣椒调制的香料酱，烤出烟熏与微焦的复合香气。这道菜传统上用于宗教仪式，如今许多小馆每日均有供应。来到巴厘岛，请务必品尝一次。</p>
+      <p><strong>焖鸭（Bebek Betutu）</strong>是它的家禽版本：整只鸭或鸡，塞满香草与香料混合物（<em>base genep</em>），以香蕉叶包裹，慢火炖煮数小时乃至整夜。肉质入口即化，深沉的烟熏香气令人久久难忘。</p>
+      <p><strong>拉瓦尔（Lawar）</strong>是一道仪式色拉：细切蔬菜、磨碎椰肉、香料，有时加入肉类甚至猪血。各地区、各家庭有数十种不同变体。每一口都是一次巴厘岛地道风土料理的探索之旅。</p>
+      <p>汤品方面，<strong>鸡汤米粉（Soto Ayam）</strong>——以香料熬制的鸡汤，配以米粉、青柠和卡菲尔酸橙叶——是清晨穿越稻田徒步后最完美的治愈之食。而作为甜点小食，色彩缤纷的<strong>巴厘岛蒸糕（Jaje Bali）</strong>也值得列入您的美食行程。</p>
+      <h2>乌布顶级美食餐厅推荐</h2>
+      <p><strong>Locavore</strong> 餐厅长期跻身亚洲50佳餐厅之列，是巴厘岛高级料理的最佳诠释。餐厅所有食材均源自本地：来自周边菜园的蔬菜、岛屿海岸的鲜鱼、几公里外种植的香料。品鉴菜单随季节更换，每道菜都带来惊喜。建议提前数周预订。</p>
+      <p><strong>Mozaic 美食餐厅</strong>藏于乌布市中心一座浪漫的热带花园之中，以法式与巴厘岛风味融合为特色，精致而优雅。主厨以法式经典技艺精准演绎印度尼西亚食材，成就一段难以复制的味觉旅程。烛光晚餐是岛上最令人难忘的体验之一。</p>
+      <p><strong>Hujan Locale</strong> 是行家们的心头好，主厨 Will Meyrick 以创意之笔重新诠释印度尼西亚群岛各地料理——从苏门答腊到巴布亚——配以开放式森林露台与令人印象深刻的本地鸡尾酒单。</p>
+      <p><strong>Room4Dessert</strong> 由曾出现在 Netflix 纪录片《主厨的餐桌》中的主厨 Will Goldfarb 主理，是一段独特的甜点叙事：整个菜单专注于高级料理甜品，在亲密而诗意的氛围中娓娓道来，是好奇心旺盛的美食家不可错过的体验。</p>
+      <h2>大厨直接来到您身边：别墅烹饪课与私人晚宴</h2>
+      <p>在餐厅里探索巴厘岛料理固然迷人，但没有什么比得上在 <strong>Villa Mimpi Ubud</strong> 这片绝美天地中，由专属厨师亲手为您烹制一餐的那份私密与从容。这正是我们的私人厨师所提供的服务。</p>
+      <p><strong>烹饪课</strong>是最受我们宾客欢迎的体验之一。在厨师的带领下，您将于清晨前往乌布当地市集，亲自挑选当日食材——古老品种蔬菜、新鲜香草、完整香料。回到别墅后，您将共同准备两到三道经典巴厘岛菜肴：手工研磨 <em>base genep</em> 香料酱、铁锅翻炒、精心摆盘。课程结束后，在面朝稻田的泳池边共享午餐。</p>
+      <p>如遇特别庆典或节日晚宴，<strong>私人定制晚宴</strong>则是更为奢华的选择。厨师将根据您的口味与心意量身定制菜单——清新的本地香草前菜、巴厘岛特色主菜、热带水果甜点——从布置餐桌到装饰花艺，一切皆由我们打理。您只需在温柔的夜风中，倾听稻田里的蛙声，尽享此刻。</p>
+      <hr>
+      <p>无论是坐在乌布的名餐厅中，还是依偎在私家泳池畔，巴厘岛美食都有一种魔力，能将一顿简单的饭变成永久的回忆。在 Villa Mimpi，我们确保每一口都与这里的风景同样动人。</p>
     </div>
   </div>
 </div>
 
-<div class="article-full" id="art-en-ubud-3days">
-  <div class="article-full-inner">
-    <button class="back-btn" onclick="closeArticle()">&larr; Back to blog</button>
-    <span class="full-label">Guide &middot; 10 min read</span>
-    <h1 class="full-title">What to do in Ubud in 3 days: the perfect itinerary</h1>
-    <div class="full-meta">May 2025 &middot; Villa Mimpi Ubud</div>
-    <div class="full-content">
-      <p>Ubud is one of the most enchanting destinations in Asia. Between stepped rice terraces, ancient temples, tropical jungle and refined gastronomy, this city of art and spirituality in the heart of Bali deserves much more than a day. Here is our ideal itinerary for 3 unforgettable days in Ubud, based at <strong>Villa Mimpi Ubud</strong>.</p>
-      <h2>Day 1: Nature and spirituality</h2>
-      <p>Begin with a <strong>floating breakfast</strong> in Villa Mimpi's infinity pool. Head to the UNESCO-listed <strong>Tegallalang terraces</strong>, among the most photographed in Asia. Arrive early to catch them in the morning mist. In the afternoon, visit the <strong>Tirta Empul Temple</strong>, a ritual purification site.</p>
-      <h2>Day 2: Arts, culture and jungle</h2>
-      <p>Explore <strong>Ubud Market</strong>, a labyrinth of colors and fragrances. In the afternoon, the <strong>Sangeh Monkey Forest</strong> where hundreds of macaques roam freely. In the evening, the <strong>Kecak dance</strong> at Uluwatu Temple, an utterly captivating fire and voice ballet.</p>
-      <h2>Day 3: Hiking and gastronomy</h2>
-      <p>At dawn, the <strong>Campuhan Ridge Walk</strong>, 9km of verdant hills and pristine rice fields. Gastronomic lunch at <strong>Mozaic Restaurant</strong> or <strong>Locavore</strong>. Return to Villa Mimpi for one last swim and the sunset.</p>
-      <h2>Practical tips</h2>
-      <p><strong>Best season:</strong> April-October &middot; <strong>Transport:</strong> Scooter or private driver from the villa &middot; <strong>Budget:</strong> 50-100&euro;/day &middot; <strong>Temples:</strong> Wear a sarong</p>
-      <hr><p><strong>Villa Mimpi Ubud</strong> is the ideal base to explore Ubud at your own pace. Our team organises your tailor-made programme.</p>
-    </div>
-  </div>
-</div>
-
-<div class="article-full" id="art-zh-ubud-3days">
-  <div class="article-full-inner">
-    <button class="back-btn" onclick="closeArticle()">&larr; &#36820;&#22238;&#21338;&#23458;</button>
-    <span class="full-label">&#25391;&#23601;&#25391;&#23601; &middot; &#38405;&#35835;10&#20998;&#38047;</span>
-    <h1 class="full-title">&#20113;&#24067;3&#26085;&#34892;&#31243;&#25391;&#23601;&#25391;&#23601;&#65306;&#23436;&#32654;&#34892;&#31243;&#25391;&#23601;</h1>
-    <div class="full-meta">2025&#24180;5&#26376; &middot; Villa Mimpi Ubud</div>
-    <div class="full-content">
-      <p>&#20113;&#24067;&#26159;&#20122;&#27954;&#26368;&#20351;&#20154;&#30528;&#36948;&#30340;&#30446;&#30340;&#22320;&#20043;&#19968;&#12290;&#22312;&#23637;&#24335;&#31275;&#30000;&#12289;&#21476;&#32493;&#31070;&#24202;&#12289;&#28909;&#24481;&#19995;&#26519;&#21644;&#31934;&#33268;&#32654;&#39069;&#20043;&#38388;&#65292;&#36825;&#24231;&#24052;&#21033;&#23707;&#23707;&#20013;&#24515;&#30340;&#33402;&#26415;&#19982;&#31934;&#31070;&#20043;&#22478;&#20540;&#24471;&#20320;&#21482;&#20551;&#36816;&#25285;&#19981;&#27490;&#19968;&#22825;&#12290;&#25105;&#20204;&#20026;&#24744;&#25512;&#20551;&#20197; <strong>Villa Mimpi Ubud</strong> &#20026;&#22522;&#22320;&#30340;&#20113;&#24067;3&#26085;&#23436;&#32654;&#34892;&#31243;&#12290;</p>
-      <h2>&#31532;&#19968;&#22825;&#65306;&#33258;&#28982;&#19982;&#31070;&#24615;</h2>
-      <p>&#22312; Villa Mimpi &#26080;&#36793;&#27954;&#27744;&#20013;&#20840;&#29616;<strong>&#28431;&#27973;&#26089;&#39511;</strong>&#12290;&#21069;&#24448;&#32852;&#21512;&#22269;&#25945;&#31185;&#25991;&#32452;&#35748;&#23450;&#30340;<strong>&#24503;&#26684;&#25289;&#26187;&#26426;&#30000;</strong>&#65292;&#36827;&#20986;&#26377;&#26102;&#38388;&#26227;&#26227;&#25277;&#36798;&#20197;&#36991;&#24320;&#28216;&#23458;&#12290;&#19979;&#21320;&#21069;&#24448;<strong>&#34521;&#23572;&#20854;&#26031;&#21697;&#32005;&#23475;</strong>&#20307;&#39564;&#24052;&#21033;&#23707;&#23707;&#20256;&#32479;&#20928;&#21270;&#20284;&#24335;&#12290;</p>
-      <h2>&#31532;&#20108;&#22825;&#65306;&#33402;&#26415;&#12289;&#25991;&#21270;&#19982;&#20381;&#26519;</h2>
-      <p>&#25391;&#23601;&#25391;&#23601;<strong>&#20113;&#24067;&#24066;&#22580;</strong>&#65292;&#20986;&#21806;&#23601;&#24072;&#12289;&#38498;&#20851;&#12289;&#39321;&#26009;&#21644;&#24322;&#22269;&#27700;&#26524;&#12290;&#19979;&#21320;&#21069;&#24448;<strong>&#26449;&#26684;&#29286;&#23376;&#26519;</strong>&#25391;&#23601;&#25391;&#23601;&#33258;&#30001;&#31478;&#29503;&#30340;&#31478;&#29503;&#12290;&#20109;&#19978;&#36824;&#26377;<strong>&#21345;&#24065;&#20811;&#33310;</strong>&#34920;&#28982;&#12290;</p>
-      <h2>&#31532;&#19977;&#22825;&#65306;&#24444;&#27493;&#19982;&#32654;&#39069;</h2>
-      <p>&#40481;&#26230;&#20986;&#21457;&#65292;&#36229;&#19978;<strong>&#22574;&#26222;&#27721;&#23665;&#33401;&#27493;&#36947;</strong>&#65292;&#35266;&#36265;<strong>Mozaic</strong>&#25110; <strong>Locavore</strong>&#30340;&#31934;&#33268;&#21320;&#39277;&#12290;&#22238;&#21040; Villa Mimpi &#20877;&#27425;&#20241;&#23433;&#26080;&#36793;&#27954;&#27744;&#12290;</p>
-      <h2>&#23454;&#29992;&#24314;&#35758;</h2>
-      <p><strong>&#26368;&#20339;&#26102;&#38388;&#65306;</strong>4-10&#26376; &middot; <strong>&#20132;&#36890;&#65306;</strong>&#31199;&#29992;&#25391;&#23601;&#25391;&#23601;&#36828;&#25392;&#24212;&#35831;&#30593;&#25209;&#31169;&#20154;&#21496; &middot; <strong>&#39044;&#31639;&#65306;</strong>&#27599;&#22825;50-100&#27431;&#20803;</p>
-      <hr><p><strong>Villa Mimpi Ubud</strong>&#26159;&#25353;&#33258;&#24049;&#33410;&#22949;&#25216;&#24418;&#25391;&#23601;&#25391;&#23601;&#20113;&#24067;&#30340;&#29702;&#24819;&#22522;&#22320;&#12290;</p>
-    </div>
-  </div>
-</div>
-
-<div class="article-full" id="art-fr-ubud-3days">
-  <div class="article-full-inner">
-    <button class="back-btn" onclick="closeArticle()">&larr; Retour au blog</button>
-    <span class="full-label">Guide &middot; 10 min de lecture</span>
-    <h1 class="full-title">Que faire &agrave; Ubud en 3 jours : l'itin&eacute;raire parfait</h1>
-    <div class="full-meta">Mai 2025 &middot; Villa Mimpi Ubud</div>
-    <div class="full-content">
-      <p>Ubud est l'une des destinations les plus envoutantes d'Asie. Entre rizi&egrave;res en escalier, temples anciens, jungle tropicale et gastronomie raffin&eacute;e, cette ville d'art et de spiritualit&eacute; au c&oelig;ur de Bali m&eacute;rite bien plus qu'une journ&eacute;e. Voici notre itin&eacute;raire id&eacute;al pour 3 jours inoubliables &agrave; Ubud, depuis la <strong>Villa Mimpi Ubud</strong>.</p>
-      <h2>Jour 1 : Nature et spiritualit&eacute;</h2>
-      <p>Commencez par un <strong>floating breakfast</strong> dans la piscine &agrave; d&eacute;bordement de la Villa Mimpi. Direction les <strong>terrasses de Tegallalang</strong> inscrites &agrave; l'UNESCO, parmi les plus photographi&eacute;es d'Asie. Arrivez t&ocirc;t pour les d&eacute;couvrir dans la brume matinale. L'apr&egrave;s-midi, visitez le <strong>Temple de Tirta Empul</strong>, lieu de purification rituelle balinaise.</p>
-      <h2>Jour 2 : Arts, culture et jungle</h2>
-      <p>Explorez le <strong>March&eacute; d'Ubud</strong>, labyrinthe de couleurs et de parfums. L'apr&egrave;s-midi, la <strong>For&ecirc;t des Singes de Sangeh</strong> o&ugrave; des centaines de macaques vivent en libert&eacute;. En soir&eacute;e, le spectacle de <strong>danse Kecak</strong> au temple d'Uluwatu, un ballet de feu et de voix absolument envoutant.</p>
-      <h2>Jour 3 : Randonn&eacute;e et gastronomie</h2>
-      <p>&Agrave; l'aube, la <strong>randonn&eacute;e de la rivi&egrave;re Campuhan</strong>, 9km de collines verdoyantes et de rizi&egrave;res immacul&eacute;es. D&eacute;jeuner gastronomique au <strong>Mozaic Restaurant</strong> ou au <strong>Locavore</strong>. Retour &agrave; la Villa Mimpi pour profiter une derni&egrave;re fois de la piscine et du coucher de soleil.</p>
-      <h2>Conseils pratiques</h2>
-      <p><strong>Meilleure p&eacute;riode :</strong> Avril-octobre &middot; <strong>Transport :</strong> Scooter ou chauffeur priv&eacute; depuis la villa &middot; <strong>Budget :</strong> 50-100&euro;/jour &middot; <strong>Temples :</strong> Porter un sarong</p>
-      <hr><p>La <strong>Villa Mimpi Ubud</strong> est l'&eacute;crin id&eacute;al pour explorer Ubud &agrave; votre rythme. Notre &eacute;quipe organise votre programme sur mesure.</p>
-    </div>
-  </div>
-</div>
-
-<div class="article-full" id="art-en-ubud-3days">
-  <div class="article-full-inner">
-    <button class="back-btn" onclick="closeArticle()">&larr; Back to blog</button>
-    <span class="full-label">Guide &middot; 10 min read</span>
-    <h1 class="full-title">What to do in Ubud in 3 days: the perfect itinerary</h1>
-    <div class="full-meta">May 2025 &middot; Villa Mimpi Ubud</div>
-    <div class="full-content">
-      <p>Ubud is one of the most enchanting destinations in Asia. Between stepped rice terraces, ancient temples, tropical jungle and refined gastronomy, this city of art and spirituality in the heart of Bali deserves much more than a day. Here is our ideal itinerary for 3 unforgettable days in Ubud, based at <strong>Villa Mimpi Ubud</strong>.</p>
-      <h2>Day 1: Nature and spirituality</h2>
-      <p>Begin with a <strong>floating breakfast</strong> in Villa Mimpi's infinity pool. Head to the UNESCO-listed <strong>Tegallalang terraces</strong>, among the most photographed in Asia. Arrive early to catch them in the morning mist. In the afternoon, visit the <strong>Tirta Empul Temple</strong>, a ritual purification site.</p>
-      <h2>Day 2: Arts, culture and jungle</h2>
-      <p>Explore <strong>Ubud Market</strong>, a labyrinth of colors and fragrances. In the afternoon, the <strong>Sangeh Monkey Forest</strong> where hundreds of macaques roam freely. In the evening, the <strong>Kecak dance</strong> at Uluwatu Temple, an utterly captivating fire and voice ballet.</p>
-      <h2>Day 3: Hiking and gastronomy</h2>
-      <p>At dawn, the <strong>Campuhan Ridge Walk</strong>, 9km of verdant hills and pristine rice fields. Gastronomic lunch at <strong>Mozaic Restaurant</strong> or <strong>Locavore</strong>. Return to Villa Mimpi for one last swim and the sunset.</p>
-      <h2>Practical tips</h2>
-      <p><strong>Best season:</strong> April-October &middot; <strong>Transport:</strong> Scooter or private driver from the villa &middot; <strong>Budget:</strong> 50-100&euro;/day &middot; <strong>Temples:</strong> Wear a sarong</p>
-      <hr><p><strong>Villa Mimpi Ubud</strong> is the ideal base to explore Ubud at your own pace. Our team organises your tailor-made programme.</p>
-    </div>
-  </div>
-</div>
-
-<div class="article-full" id="art-zh-ubud-3days">
-  <div class="article-full-inner">
-    <button class="back-btn" onclick="closeArticle()">&larr; &#36820;&#22238;&#21338;&#23458;</button>
-    <span class="full-label">&#25391;&#23601;&#25391;&#23601; &middot; &#38405;&#35835;10&#20998;&#38047;</span>
-    <h1 class="full-title">&#20113;&#24067;3&#26085;&#34892;&#31243;&#25391;&#23601;&#25391;&#23601;&#65306;&#23436;&#32654;&#34892;&#31243;&#25391;&#23601;</h1>
-    <div class="full-meta">2025&#24180;5&#26376; &middot; Villa Mimpi Ubud</div>
-    <div class="full-content">
-      <p>&#20113;&#24067;&#26159;&#20122;&#27954;&#26368;&#20351;&#20154;&#30528;&#36948;&#30340;&#30446;&#30340;&#22320;&#20043;&#19968;&#12290;&#22312;&#23637;&#24335;&#31275;&#30000;&#12289;&#21476;&#32493;&#31070;&#24202;&#12289;&#28909;&#24481;&#19995;&#26519;&#21644;&#31934;&#33268;&#32654;&#39069;&#20043;&#38388;&#65292;&#36825;&#24231;&#24052;&#21033;&#23707;&#23707;&#20013;&#24515;&#30340;&#33402;&#26415;&#19982;&#31934;&#31070;&#20043;&#22478;&#20540;&#24471;&#20320;&#21482;&#20551;&#36816;&#25285;&#19981;&#27490;&#19968;&#22825;&#12290;&#25105;&#20204;&#20026;&#24744;&#25512;&#20551;&#20197; <strong>Villa Mimpi Ubud</strong> &#20026;&#22522;&#22320;&#30340;&#20113;&#24067;3&#26085;&#23436;&#32654;&#34892;&#31243;&#12290;</p>
-      <h2>&#31532;&#19968;&#22825;&#65306;&#33258;&#28982;&#19982;&#31070;&#24615;</h2>
-      <p>&#22312; Villa Mimpi &#26080;&#36793;&#27954;&#27744;&#20013;&#20840;&#29616;<strong>&#28431;&#27973;&#26089;&#39511;</strong>&#12290;&#21069;&#24448;&#32852;&#21512;&#22269;&#25945;&#31185;&#25991;&#32452;&#35748;&#23450;&#30340;<strong>&#24503;&#26684;&#25289;&#26187;&#26426;&#30000;</strong>&#65292;&#36827;&#20986;&#26377;&#26102;&#38388;&#26227;&#26227;&#25277;&#36798;&#20197;&#36991;&#24320;&#28216;&#23458;&#12290;&#19979;&#21320;&#21069;&#24448;<strong>&#34521;&#23572;&#20854;&#26031;&#21697;&#32005;&#23475;</strong>&#20307;&#39564;&#24052;&#21033;&#23707;&#23707;&#20256;&#32479;&#20928;&#21270;&#20284;&#24335;&#12290;</p>
-      <h2>&#31532;&#20108;&#22825;&#65306;&#33402;&#26415;&#12289;&#25991;&#21270;&#19982;&#20381;&#26519;</h2>
-      <p>&#25391;&#23601;&#25391;&#23601;<strong>&#20113;&#24067;&#24066;&#22580;</strong>&#65292;&#20986;&#21806;&#23601;&#24072;&#12289;&#38498;&#20851;&#12289;&#39321;&#26009;&#21644;&#24322;&#22269;&#27700;&#26524;&#12290;&#19979;&#21320;&#21069;&#24448;<strong>&#26449;&#26684;&#29286;&#23376;&#26519;</strong>&#25391;&#23601;&#25391;&#23601;&#33258;&#30001;&#31478;&#29503;&#30340;&#31478;&#29503;&#12290;&#20109;&#19978;&#36824;&#26377;<strong>&#21345;&#24065;&#20811;&#33310;</strong>&#34920;&#28982;&#12290;</p>
-      <h2>&#31532;&#19977;&#22825;&#65306;&#24444;&#27493;&#19982;&#32654;&#39069;</h2>
-      <p>&#40481;&#26230;&#20986;&#21457;&#65292;&#36229;&#19978;<strong>&#22574;&#26222;&#27721;&#23665;&#33401;&#27493;&#36947;</strong>&#65292;&#35266;&#36265;<strong>Mozaic</strong>&#25110; <strong>Locavore</strong>&#30340;&#31934;&#33268;&#21320;&#39277;&#12290;&#22238;&#21040; Villa Mimpi &#20877;&#27425;&#20241;&#23433;&#26080;&#36793;&#27954;&#27744;&#12290;</p>
-      <h2>&#23454;&#29992;&#24314;&#35758;</h2>
-      <p><strong>&#26368;&#20339;&#26102;&#38388;&#65306;</strong>4-10&#26376; &middot; <strong>&#20132;&#36890;&#65306;</strong>&#31199;&#29992;&#25391;&#23601;&#25391;&#23601;&#36828;&#25392;&#24212;&#35831;&#30593;&#25209;&#31169;&#20154;&#21496; &middot; <strong>&#39044;&#31639;&#65306;</strong>&#27599;&#22825;50-100&#27431;&#20803;</p>
-      <hr><p><strong>Villa Mimpi Ubud</strong>&#26159;&#25353;&#33258;&#24049;&#33410;&#22949;&#25216;&#24418;&#25391;&#23601;&#25391;&#23601;&#20113;&#24067;&#30340;&#29702;&#24819;&#22522;&#22320;&#12290;</p>
-    </div>
-  </div>
-</div>
-
+<!-- FLOATING ARTICLE FR/EN/ZH -->
 <div class="article-full" id="art-fr-floating-article">
   <div class="article-full-inner">
-    <button class="back-btn" onclick="closeArticle()">&larr; Retour au blog</button>
-    <span class="full-label">La Villa &middot; 6 min de lecture</span>
+    <button class="back-btn" onclick="closeArticle()">← Retour au blog</button>
+    <span class="full-label">La Villa · 6 min de lecture</span>
     <h1 class="full-title">Floating breakfast Bali : tout ce qu'il faut savoir</h1>
-    <div class="full-meta">Mai 2025 &middot; Villa Mimpi Ubud</div>
+    <div class="full-meta">Mai 2025 · Villa Mimpi Ubud</div>
     <div class="full-content">
       <img src="https://raw.githubusercontent.com/pcabon/villamimpi/main/images/floating-breakfast.jpg" alt="Floating breakfast Villa Mimpi Ubud" style="width:100%;border-radius:4px;margin-bottom:2rem">
-      <p>Le <strong>floating breakfast</strong> est devenu l'une des exp&eacute;riences les plus recherch&eacute;es &agrave; Bali. Sur Instagram, les photos de plateaux flottants dans des piscines turquoise cumulent des millions de likes. Mais au-del&agrave; de l'effet visuel, c'est une exp&eacute;rience sensorielle unique que nous proposons &agrave; la <strong>Villa Mimpi Ubud</strong>.</p>
+      <p>Le <strong>floating breakfast</strong> est devenu l'une des expériences les plus recherchées à Bali. Sur Instagram, les photos de plateaux flottants dans des piscines turquoise cumulent des millions de likes. Mais au-delà de l'effet visuel, c'est une expérience sensorielle unique que nous proposons à la <strong>Villa Mimpi Ubud</strong>.</p>
       <h2>Qu'est-ce que le floating breakfast ?</h2>
-      <p>Le concept est simple et magique : un plateau de petit-d&eacute;jeuner est d&eacute;pos&eacute; sur l'eau de la piscine, g&eacute;n&eacute;ralement dans un plateau en rotin tress&eacute; orn&eacute; de fleurs tropicales. Vous vous installez dans l'eau et d&eacute;guster votre repas face au paysage. &Agrave; la Villa Mimpi Ubud, ce paysage, c'est une vue panoramique sur les rizi&egrave;res dor&eacute;es d'Ubud.</p>
-      <h2>Ce qui est servi &agrave; Villa Mimpi Ubud</h2>
-      <p>Notre floating breakfast comprend :</p>
-      <p>&bull; Une s&eacute;lection de <strong>fruits tropicaux</strong> de saison : mangue, papaye, dragon fruit, salak<br>
-      &bull; Des sp&eacute;cialit&eacute;s balinaises : nasi goreng, pisang goreng<br>
-      &bull; Des pancakes avec sirop de coco<br>
-      &bull; Une boisson chaude : caf&eacute; Bali ou th&eacute; au gingembre<br>
-      &bull; Un jus de fruits frais press&eacute;s<br>
-      &bull; Des fleurs d'hibiscus et de frangipanier pour la d&eacute;coration</p>
-      <h2>Quand r&eacute;server ?</h2>
-      <p>La <strong>meilleure heure</strong> pour le floating breakfast est entre 7h et 9h du matin. La lumi&egrave;re dor&eacute;e du lever de soleil sur les rizi&egrave;res crée une atmosph&egrave;re incomparable. Notre &eacute;quipe pr&eacute;pare tout la veille et vous r&eacute;veille au bon moment.</p>
-      <h2>Comment r&eacute;server ?</h2>
-      <p>Le floating breakfast est inclus dans les s&eacute;jours &agrave; la Villa Mimpi Ubud. Il vous suffit de nous pr&eacute;venir la veille de vos pr&eacute;f&eacute;rences alimentaires par WhatsApp ou email. Nous nous occupons du reste.</p>
+      <p>Le concept est simple et magique : un plateau de petit-déjeuner est déposé sur l'eau de la piscine, généralement dans un plateau en rotin tressé orné de fleurs tropicales. Vous vous installez dans l'eau et dégustez votre repas face au paysage. À la Villa Mimpi Ubud, ce paysage, c'est une vue panoramique sur les rizières dorées d'Ubud.</p>
+      <h2>Ce qui est servi à Villa Mimpi Ubud</h2>
+      <p>Notre floating breakfast comprend une sélection de <strong>fruits tropicaux</strong> de saison (mangue, papaye, dragon fruit, salak), des spécialités balinaises (nasi goreng, pisang goreng), des pancakes avec sirop de coco, une boisson chaude au choix, un jus de fruits frais pressés et des fleurs d'hibiscus et de frangipanier pour la décoration.</p>
+      <h2>Quand réserver ?</h2>
+      <p>La <strong>meilleure heure</strong> pour le floating breakfast est entre 7h et 9h du matin. La lumière dorée du lever de soleil sur les rizières crée une atmosphère incomparable. Notre équipe prépare tout la veille et vous réveille au bon moment.</p>
       <hr>
-      <p>Le floating breakfast de la <strong>Villa Mimpi Ubud</strong> n'est pas simplement un petit-d&eacute;jeuner. C'est le d&eacute;but d'une journ&eacute;e parfaite &agrave; Bali, un souvenir que vous emporterez avec vous pour toujours.</p>
+      <p>Le floating breakfast de la <strong>Villa Mimpi Ubud</strong> n'est pas simplement un petit-déjeuner. C'est le début d'une journée parfaite à Bali, un souvenir que vous emporterez avec vous pour toujours.</p>
     </div>
   </div>
 </div>
 
 <div class="article-full" id="art-en-floating-article">
   <div class="article-full-inner">
-    <button class="back-btn" onclick="closeArticle()">&larr; Back to blog</button>
-    <span class="full-label">The Villa &middot; 6 min read</span>
+    <button class="back-btn" onclick="closeArticle()">← Back to blog</button>
+    <span class="full-label">The Villa · 6 min read</span>
     <h1 class="full-title">Floating breakfast Bali: everything you need to know</h1>
-    <div class="full-meta">May 2025 &middot; Villa Mimpi Ubud</div>
+    <div class="full-meta">May 2025 · Villa Mimpi Ubud</div>
     <div class="full-content">
       <img src="https://raw.githubusercontent.com/pcabon/villamimpi/main/images/floating-breakfast.jpg" alt="Floating breakfast Villa Mimpi Ubud" style="width:100%;border-radius:4px;margin-bottom:2rem">
       <p>The <strong>floating breakfast</strong> has become one of the most sought-after experiences in Bali. On Instagram, photos of floating trays in turquoise pools accumulate millions of likes. But beyond the visual effect, it is a unique sensory experience that we offer at <strong>Villa Mimpi Ubud</strong>.</p>
       <h2>What is a floating breakfast?</h2>
       <p>The concept is simple and magical: a breakfast tray is placed on the water of the pool, usually in a woven rattan tray decorated with tropical flowers. You settle into the water and enjoy your meal facing the landscape. At Villa Mimpi Ubud, that landscape is a panoramic view over the golden rice fields of Ubud.</p>
       <h2>What is served at Villa Mimpi Ubud</h2>
-      <p>Our floating breakfast includes:</p>
-      <p>&bull; A selection of seasonal <strong>tropical fruits</strong>: mango, papaya, dragon fruit, salak<br>
-      &bull; Balinese specialties: nasi goreng, pisang goreng<br>
-      &bull; Pancakes with coconut syrup<br>
-      &bull; A hot drink: Bali coffee or ginger tea<br>
-      &bull; Fresh pressed fruit juice<br>
-      &bull; Hibiscus and frangipani flowers for decoration</p>
+      <p>Our floating breakfast includes a selection of seasonal <strong>tropical fruits</strong> (mango, papaya, dragon fruit, salak), Balinese specialties (nasi goreng, pisang goreng), pancakes with coconut syrup, a hot drink of your choice, fresh pressed fruit juice and hibiscus and frangipani flowers for decoration.</p>
       <h2>When to book?</h2>
       <p>The <strong>best time</strong> for the floating breakfast is between 7am and 9am. The golden sunrise light over the rice fields creates an incomparable atmosphere. Our team prepares everything the evening before and wakes you at the right moment.</p>
-      <h2>How to book?</h2>
-      <p>The floating breakfast is included in stays at Villa Mimpi Ubud. Simply let us know your dietary preferences the evening before by WhatsApp or email. We take care of the rest.</p>
       <hr>
       <p>The floating breakfast at <strong>Villa Mimpi Ubud</strong> is not simply a breakfast. It is the beginning of a perfect day in Bali, a memory you will carry with you forever.</p>
     </div>
@@ -812,28 +714,21 @@
 
 <div class="article-full" id="art-zh-floating-article">
   <div class="article-full-inner">
-    <button class="back-btn" onclick="closeArticle()">&larr; &#36820;&#22238;&#21338;&#23458;</button>
-    <span class="full-label">&#21035;&#22885; &middot; &#38405;&#35835;6&#20998;&#38047;</span>
-    <h1 class="full-title">&#24052;&#21033;&#23707;&#23707;&#28431;&#27973;&#26089;&#39511;&#65306;&#19968;&#20999;&#24517;&#30693;</h1>
-    <div class="full-meta">2025&#24180;5&#26376; &middot; Villa Mimpi Ubud</div>
+    <button class="back-btn" onclick="closeArticle()">← 返回博客</button>
+    <span class="full-label">别墅 · 阅读6分钟</span>
+    <h1 class="full-title">巴厘岛漂浮早餐：一切必知</h1>
+    <div class="full-meta">2025年5月 · Villa Mimpi Ubud</div>
     <div class="full-content">
       <img src="https://raw.githubusercontent.com/pcabon/villamimpi/main/images/floating-breakfast.jpg" alt="Floating breakfast Villa Mimpi Ubud" style="width:100%;border-radius:4px;margin-bottom:2rem">
-      <p><strong>&#28431;&#27973;&#26089;&#39511;</strong>&#24050;&#25104;&#20026;&#24052;&#21033;&#23707;&#23707;&#26368;&#21463;&#27714;&#36335;&#30340;&#20307;&#39564;&#20043;&#19968;&#12290;&#22312; Villa Mimpi Ubud&#65292;&#36825;&#19981;&#20165;&#20165;&#26159;&#19968;&#24352;&#32654;&#40679;&#65292;&#26356;&#26159;&#19968;&#27573;&#20105;&#24515;&#30340;&#30456;&#36339;&#20307;&#39564;&#12290;</p>
-      <h2>&#20160;&#20040;&#26159;&#28431;&#27973;&#26089;&#39511;&#65311;</h2>
-      <p>&#27982;&#24565;&#31616;&#21333;&#32780;&#31070;&#22855;&#65306;&#19968;&#20491;&#35013;&#35013;&#20102;&#26089;&#39511;&#30340;&#25176;&#30424;&#20219;&#20854;&#28371;&#28014;&#22312;&#27954;&#27744;&#27700;&#38754;&#19978;&#65292;&#36890;&#24120;&#26159;&#19968;&#20491;&#32489;&#32455;&#30340;&#34218;&#32441;&#25176;&#30424;&#65292;&#36855;&#20301;&#29615;&#32568;&#30340;&#24481;&#24030;&#33457;&#12290;&#24744;&#28369;&#20837;&#27700;&#20013;&#65292;&#38754;&#26397;&#31275;&#30000;&#32phải;&#24847;&#22320;&#21631;&#29992;&#26089;&#39511;&#12290;</p>
-      <h2>Villa Mimpi Ubud &#30340;&#28431;&#27973;&#26089;&#39511;&#21253;&#21547;</h2>
-      <p>&bull; &#31934;&#36873;&#26102;&#20051;<strong>&#28201;&#24481;&#27700;&#26524;</strong>&#65306;&#33319;&#26524;&#12289;&#26408;&#29259;&#12289;&#28779;&#40857;&#26524;&#12289;&#34507;&#30382;&#26524;<br>
-      &bull; &#24052;&#21033;&#23707;&#23707;&#29305;&#33394;&#32654;&#39069;&#65306;&#37329;&#39322;&#12289;&#28593;&#32433;&#34508;<br>
-      &bull; &#30053;&#39292;&#37197;&#26690;&#23113;&#31273;&#31957;&#28381;<br>
-      &bull; &#28406;&#39996;&#65306;&#24052;&#21033;&#21407;&#21387;&#21654;&#25110;&#29233;&#24503;&#33590;<br>
-      &bull; &#26032;&#40613;&#29615;&#27893;&#26524;&#27979;<br>
-      &bull; &#33713;&#32084;&#33457;&#19982;&#40481;&#20943;&#33457;&#35013;&#39280;</p>
-      <h2>&#20160;&#20040;&#26102;&#20505;&#39044;&#35746;&#65311;</h2>
-      <p>&#28431;&#27973;&#26089;&#39511;&#30340;<strong>&#26368;&#20339;&#26102;&#38388;</strong>&#26159;&#19978;&#21320;7&#28857;&#33267;9&#28857;&#12290;&#26085;&#20986;&#26102;&#20998;&#31275;&#30000;&#19978;&#30340;&#37329;&#33394;&#26049;&#20809;&#23558;&#21019;&#36896;&#26080;&#19982;&#20381;&#27604;&#30340;&#27668;&#24432;&#12290;</p>
-      <h2>&#22914;&#20309;&#39044;&#35746;&#65311;</h2>
-      <p>&#28431;&#27973;&#26089;&#39511;&#24050;&#21253;&#21547;&#22312; Villa Mimpi Ubud &#30340;&#20837;&#20303;&#19988;&#36215;&#12290;&#21482;&#38656;&#25552;&#21069;&#36890;&#36807; WhatsApp &#25110;&#30005;&#23376;&#37038;&#20214;&#21578;&#30693;&#24744;&#30340;&#39512;&#39069;&#20351;&#29992;&#20844;&#24052;&#24819;&#20004;&#21363;&#21487;&#12290;</p>
+      <p><strong>漂浮早餐</strong>已成为巴厘岛最受追捧的体验之一。在 Villa Mimpi Ubud，这不仅仅是一张美照，更是一段令人心动的感官体验。</p>
+      <h2>什么是漂浮早餐？</h2>
+      <p>概念简单而神奇：一个装满早餐的托盘任其漂浮在泳池水面上，通常是一个编织藤条托盘，点缀着热带花朵。您滑入水中，面朝风景享用早餐。在 Villa Mimpi Ubud，那片风景便是乌布金色稻田的全景视野。</p>
+      <h2>Villa Mimpi Ubud 的漂浮早餐包含</h2>
+      <p>我们的漂浮早餐包含精选时令<strong>热带水果</strong>（芒果、木瓜、火龙果、蛇皮果）、巴厘岛特色美食（炒饭、炸香蕉）、椰糖松饼、一杯您喜爱的热饮、新鲜现榨果汁以及芙蓉花与鸡蛋花装饰。</p>
+      <h2>何时预订？</h2>
+      <p>漂浮早餐的<strong>最佳时间</strong>是上午7点至9点。日出时分稻田上的金色朝光营造出无与伦比的氛围。我们的团队会提前准备好一切，并在最佳时刻将您唤醒。</p>
       <hr>
-      <p><strong>Villa Mimpi Ubud</strong> &#30340;&#28431;&#27973;&#26089;&#39511;&#19981;&#20165;&#20165;&#26159;&#19968;&#39039;&#26089;&#39511;&#65292;&#26356;&#26159;&#24052;&#21033;&#23707;&#23707;&#23436;&#32654;&#19968;&#22825;&#30340;&#24207;&#31456;&#12290;</p>
+      <p><strong>Villa Mimpi Ubud</strong> 的漂浮早餐不仅仅是一顿早餐，更是巴厘岛完美一天的序章，一段您将永远珍藏的记忆。</p>
     </div>
   </div>
 </div>
@@ -848,32 +743,26 @@
 </footer>
 
 <script>
-  // ── TRANSLATIONS ──
   const T = {
     fr: { villa: 'La villa', rooms: 'Chambres', exp: 'Expériences', book: 'Réserver', reservation: 'Réservation' },
     en: { villa: 'The villa', rooms: 'Rooms', exp: 'Experiences', book: 'Book Now', reservation: 'Booking' },
     zh: { villa: '别墅', rooms: '客房', exp: '体验', book: '立即预订', reservation: '预订' }
   };
 
-  // ── STATE ──
-  var urlLang = new URLSearchParams(window.location.search).get('lang'); let currentLang = (urlLang === 'fr' || urlLang === 'en' || urlLang === 'zh') ? urlLang : (localStorage.getItem('vmLang') || 'fr');
+  var urlLang = new URLSearchParams(window.location.search).get('lang');
+  let currentLang = (urlLang === 'fr' || urlLang === 'en' || urlLang === 'zh') ? urlLang : (localStorage.getItem('vmLang') || 'fr');
 
-  // ── LANG SWITCH ──
   function setLang(lang) {
-    // Hide all pages
     ['fr','en','zh'].forEach(l => {
       document.getElementById('page-' + l).style.display = 'none';
     });
-    // Show selected
     document.getElementById('page-' + lang).style.display = 'block';
 
-    // Update nav buttons
     document.querySelectorAll('.lang-btn').forEach(btn => {
       const btnLang = btn.textContent.trim() === 'FR' ? 'fr' : btn.textContent.trim() === 'EN' ? 'en' : 'zh';
       btn.classList.toggle('active', btnLang === lang);
     });
 
-    // Update nav links
     const t = T[lang];
     document.getElementById('navLinks').innerHTML = `
       <li><a href="/#story">${t.villa}</a></li>
@@ -888,17 +777,13 @@
       <a href="/#booking" onclick="closeMobileMenu()" style="font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);text-decoration:none;display:block;margin-bottom:1rem">${t.book}</a>
     `;
 
-    // Footer
     document.getElementById('footerVilla').textContent = t.villa;
     document.getElementById('footerBook').textContent = t.reservation;
-
-    // html lang + save
     document.documentElement.lang = lang;
     localStorage.setItem('vmLang', lang);
     currentLang = lang;
   }
 
-  // ── FILTER ──
   function filterArticles(cat, btn, lang) {
     const page = document.getElementById('page-' + lang);
     page.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -908,7 +793,6 @@
     });
   }
 
-  // ── ARTICLES ──
   function openArticle(lang, id) {
     document.getElementById('art-' + lang + '-' + id).classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -919,7 +803,6 @@
     document.body.style.overflow = '';
   }
 
-  // ── MOBILE MENU ──
   function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
   }
@@ -927,7 +810,6 @@
     document.getElementById('mobileMenu').classList.remove('open');
   }
 
-  // ── INIT ──
   setLang(currentLang);
 </script>
 </body>
