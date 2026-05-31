@@ -22,9 +22,9 @@
 <link rel="canonical" href="https://www.villamimpiubud.com/">
 
 <!-- Hreflang multilingue -->
-<link rel="alternate" hreflang="fr" href="https://www.villamimpiubud.com/">
-<link rel="alternate" hreflang="en" href="https://www.villamimpiubud.com/">
-<link rel="alternate" hreflang="zh" href="https://www.villamimpiubud.com/">
+<link rel="alternate" hreflang="fr" href="https://www.villamimpiubud.com/?lang=fr">
+<link rel="alternate" hreflang="en" href="https://www.villamimpiubud.com/?lang=en">
+<link rel="alternate" hreflang="zh" href="https://www.villamimpiubud.com/?lang=zh">
 <link rel="alternate" hreflang="x-default" href="https://www.villamimpiubud.com/">
 
 <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
@@ -54,7 +54,10 @@
   "name": "Villa Mimpi Ubud",
   "alternateName": ["Villa Mimpi", "Mimpi Villa Ubud"],
   "description": "Villa de luxe 3 chambres avec piscine à débordement et vue panoramique sur les rizières d'Ubud, Bali. Architecture moderne, immersion balinaise, floating breakfast, massage et chef privé.",
-  "url": "https://www.villamimpiubud.com",
+  "url": "https://www.villamimpiubud.com/",
+  "sameAs": [
+    "https://www.airbnb.fr/rooms/1380039355681273722"
+  ],
   "image": [
     "https://5fdcbf76bb.clvaw-cdnwnd.com/79d8e794adaa1f829b9472d6a79f277e/200000036-a477aa477d/DJI_0947.JPG?ph=5fdcbf76bb",
     "https://5fdcbf76bb.clvaw-cdnwnd.com/79d8e794adaa1f829b9472d6a79f277e/200000082-a89b5a89b8/MAXM0101.jpg?ph=5fdcbf76bb"
@@ -712,7 +715,7 @@
       <a href="#rooms"><span data-lang="fr">Les chambres</span><span data-lang="en">The Rooms</span><span data-lang="zh">客房</span></a>
       <a href="#experience"><span data-lang="fr">Expériences</span><span data-lang="en">Experiences</span><span data-lang="zh">体验项目</span></a>
       <a href="#bali">Bali</a>
-      <a id="navBlogLink" href="/blog/"><span data-lang="fr">Blog</span><span data-lang="en">Blog</span><span data-lang="zh">博客</span></a>
+      <a id="footerNavBlogLink" href="/blog/"><span data-lang="fr">Blog</span><span data-lang="en">Blog</span><span data-lang="zh">博客</span></a>
       <a href="#booking"><span data-lang="fr">Réservation</span><span data-lang="en">Booking</span><span data-lang="zh">预订</span></a>
     </div>
     <div class="footer-col">
@@ -730,7 +733,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2024 Villa Mimpi Ubud — The Dream Catcher, Ubud, Bali</span>
+    <span>© <span id="copyYear">2026</span> Villa Mimpi Ubud — The Dream Catcher, Ubud, Bali</span>
     <div class="footer-lang">
       <button class="footer-lang-btn active" onclick="setLang('fr')">FR</button>
       <button class="footer-lang-btn" onclick="setLang('en')">EN</button>
@@ -771,7 +774,7 @@
     };
     document.title = titles[lang];
     // Update blog links with current lang
-    var blogLinks = document.querySelectorAll('#navBlogLink, #footerBlogLink, #mobileBlogLink');
+    var blogLinks = document.querySelectorAll('#navBlogLink, #footerNavBlogLink, #footerBlogLink, #mobileBlogLink');
     blogLinks.forEach(function(el) { el.href = '/blog/?lang=' + lang; });
     document.querySelector('meta[name="description"]').content = descs[lang];
     document.querySelector('meta[property="og:locale"]').content = lang === 'fr' ? 'fr_FR' : lang === 'en' ? 'en_US' : 'zh_CN';
@@ -822,6 +825,9 @@
     document.querySelectorAll('.mobile-menu a').forEach(function(link) {
       link.addEventListener('click', function() { closeMobileMenu(); });
     });
+    // Année courante dans le footer (signal de fraîcheur)
+    var yearEl = document.getElementById('copyYear');
+    if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
   });
 
   function setLangMobile(lang) {
